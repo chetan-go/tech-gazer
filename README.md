@@ -54,6 +54,7 @@ Scenario 1: if yes
 Scenario 2: if no
 - ask if he/she needs to add more items or exit
 4. Printers and Scanners
+  
 •	Ask for the type of product (Printer / Scanner / All-in-one)
 •	Ask for the type of printer (Inkjet / Laser / Dot Matrix)
 •	Ask for the print color option (Black & White / Color)
@@ -61,16 +62,21 @@ Scenario 2: if no
 •	Ask for connectivity type (USB / Wi-Fi / Bluetooth / Ethernet)
 •	Ask for additional features (Duplex printing, ADF, etc.)
 •	Ask if they want accessories
+
 Scenario 1: (If Yes — wants accessories)
+
 •	Ask for extra ink or toner cartridges
 •	Ask for extra printing paper or photo paper
 •	Ask for printer cable or adapter
 •	Ask for maintenance kit or cleaning solution
 •	Ask for external scanner tray or stand
+
 Scenario 2: (If No — doesn’t want accessories)
+
 •	Ask if he/she wants to exit or view other categories
 
 5. Wearable Accessories
+6. 
 •	Ask for the type of wearable (Smartwatch / Fitness band / VR headset / Smart glasses)
 •	Ask for preferred brand
 •	Ask for connectivity preference (Bluetooth / Wi-Fi / Cellular)
@@ -78,16 +84,20 @@ Scenario 2: (If No — doesn’t want accessories)
 •	Ask for features (Heart rate monitor, GPS, SpO₂, sleep tracking, etc.)
 •	Ask for color or design preference
 •	Ask if they want accessories
+
 Scenario 1: (If Yes — wants accessories)
+
 •	Ask for extra straps or bands
 •	Ask for screen protector or case
 •	Ask for charging dock or cable
 •	Ask for compatible earbuds or wireless headset
 •	Ask for smartwatch cover or stand
-Scenario 2: (If No — doesn’t want accessories)
+Scenario 2: (If No — doesn’t want accessories
+
 •	Ask if he/she wants to exit or move to next product
 
-6. TV and Accessories
+8. TV and Accessories
+9. 
 •	Ask for the size of the TV (in inches)
 •	Ask for the display type (LED / OLED / QLED / 4K UHD / Smart)
 •	Ask for the brand preference
@@ -96,16 +106,20 @@ Scenario 2: (If No — doesn’t want accessories)
 •	Ask for sound output preference (standard / surround)
 •	Ask for connectivity options (HDMI / Wi-Fi / Bluetooth)
 •	Ask if they want accessories
+
 Scenario 1: (If Yes — wants accessories)
+
 •	Ask for wall mount or TV stand
 •	Ask for soundbar or home theater system
 •	Ask for HDMI cable or streaming stick
 •	Ask for TV remote or cover
 •	Ask for surge protector or stabilizer
 Scenario 2: (If No — doesn’t want accessories)
+
 •	Ask if he/she wants to exit or check other categories
 
-7. Music System and Accessories
+11. Music System and Accessories
+12. 
 •	Ask for the type of music system (Home Theater / Bluetooth Speaker / Soundbar / Hi-Fi system)
 •	Ask for brand preference
 •	Ask for audio output power (in watts)
@@ -113,16 +127,20 @@ Scenario 2: (If No — doesn’t want accessories)
 •	Ask for portability (Portable / Stationary)
 •	Ask for waterproof or outdoor use preference
 •	Ask if they want accessories
+
 Scenario 1: (If Yes — wants accessories)
+
 •	Ask for extra audio cables or AUX cords
 •	Ask for remote control or wall mounts
 •	Ask for subwoofer or amplifier
 •	Ask for speaker stands or covers
 •	Ask for microphone or karaoke kit
 Scenario 2: (If No — doesn’t want accessories)
+
 •	Ask if he/she wants to exit or browse more categories
 
-8. Gaming Console and Accessories
+14. Gaming Console and Accessories
+15. 
 •	Ask for the console type (PlayStation / Xbox / Nintendo / PC)
 •	Ask for storage variant (e.g., 512GB / 1TB)
 •	Ask for preferred edition or model
@@ -130,13 +148,16 @@ Scenario 2: (If No — doesn’t want accessories)
 •	Ask for display compatibility (1080p / 4K / 8K)
 •	Ask for game genre preference (Action / Sports / Racing / Adventure)
 •	Ask if they want accessories
+
 Scenario 1: (If Yes — wants accessories)
+
 •	Ask for extra controllers or joysticks
 •	Ask for gaming headset or earphones
 •	Ask for external hard drive or SSD
 •	Ask for cooling pad or stand
 •	Ask for physical game CDs or digital subscriptions (e.g., PS Plus, Game Pass)
 Scenario 2: (If No — doesn’t want accessories)
+
 •	Ask if he/she wants to exit or continue shopping
 
 
