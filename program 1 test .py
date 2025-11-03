@@ -23,3 +23,13 @@ if a.lower() == "yes":
     print("Proceeding to order selection...")
 else:
     print("Proceeding to order selection...")
+print("Please select your order from the following options:")
+print("1. Phones and accessories")
+print("2. Laptops and accessories")
+print("3. Desktops and accessories")
+print("4. Printers and scanners")
+print("5. Wearable accessories")
+print("6. Tv and accessories")
+print("7. Audio devices and accessories")
+print("8. Gaming consoles and accessories")
+print("9. Smart home devices and accessories")
