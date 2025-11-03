@@ -139,7 +139,89 @@ Scenario 2: (If No — doesn’t want accessories)
 
 •	Ask if he/she wants to exit or browse more categories
 13. smart home devices
+Ask what category of smart home devices the user wants.
 
+Example options: Smart Lights, Smart Speakers, Smart Plugs, Smart Cameras, Smart Locks, Smart Thermostats.
+
+If user chooses Smart Lights
+
+Ask for light type (Color / White / Motion Sensor based).
+
+Ask for brightness level (e.g., low, medium, high).
+
+Ask for control type (Voice, App, Remote).
+
+Ask for brand preference (Philips, Syska, Wipro, etc.).
+
+Ask if they want to add smart light accessories (like switches, hubs).
+
+If user chooses Smart Speakers
+
+Ask which assistant they prefer (Alexa / Google Assistant / Siri).
+
+Ask if they want display or no display.
+
+Ask for sound quality preference (Basic, High Bass, Premium).
+
+Ask if they want to add compatible lights or plugs with it.
+
+If user chooses Smart Plugs
+
+Ask how many devices they want to connect.
+
+Ask if they want energy monitoring features.
+
+Ask if they need voice control support.
+
+Ask if they want indoor or outdoor use plugs.
+
+If user chooses Smart Cameras
+
+Ask if they want indoor or outdoor cameras.
+
+Ask if they want 360° rotation or fixed angle.
+
+Ask for recording quality (720p / 1080p / 2K).
+
+Ask if they need night vision.
+
+Ask if they want motion alerts on phone.
+
+If user chooses Smart Locks
+
+Ask for lock type (Fingerprint / Password / Key / App controlled).
+
+Ask how many doors they want to secure.
+
+Ask if they want backup physical keys.
+
+Ask for alert system (Notification / Alarm / Both).
+
+If user chooses Smart Thermostats
+
+Ask for number of rooms to control.
+
+Ask if they want auto temperature adjustment.
+
+Ask for integration preference (Google / Alexa / Apple).
+
+Ask for display type (Touch / Dial).
+
+🛒 Scenario 1: If user wants to continue shopping
+
+Ask if they want to add another category of device.
+
+Ask if they want to view all added items.
+
+Ask if they want recommendations for similar products.
+
+🚪 Scenario 2: If user does not want to continue
+
+Ask if they want to view their total bill.
+
+Ask if they want to confirm order or exit.
+
+If exit → show “Thank you for visiting Smart Home Store!”
 
 14. Gaming Console and Accessories
 15. 
