@@ -33,8 +33,10 @@ print("6. Tv and accessories")
 print("7. Audio devices and accessories")
 print("8. Gaming consoles and accessories")
 print("9. Smart home devices and accessories")
+reorder='yes'
 order = input("Enter the product number you wish to order (1-9): ")
-if order == '1':
+while reorder=='yes':
+    if order == '1':
     print("You have selected Phones and accessories.")
     phone_ram=input("Enter the RAM size you want (4GB, 6GB, 8GB, 12GB): ")
     phone_storage=input("Enter the storage size you want (64GB, 128GB, 256GB, 512GB): ")
