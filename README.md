@@ -92,12 +92,11 @@ Scenario 1: (If Yes — wants accessories)
 •	Ask for charging dock or cable
 •	Ask for compatible earbuds or wireless headset
 •	Ask for smartwatch cover or stand
-Scenario 2: (If No — doesn’t want accessories
+Scenario 2: (If No — doesn’t want accessories)
 
 •	Ask if he/she wants to exit or move to next product
 
 8. TV and Accessories
-9. 
 •	Ask for the size of the TV (in inches)
 •	Ask for the display type (LED / OLED / QLED / 4K UHD / Smart)
 •	Ask for the brand preference
