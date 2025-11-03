@@ -207,7 +207,7 @@ Ask for integration preference (Google / Alexa / Apple).
 
 Ask for display type (Touch / Dial).
 
-🛒 Scenario 1: If user wants to continue shopping
+Scenario 1: If user wants to continue shopping
 
 Ask if they want to add another category of device.
 
@@ -215,7 +215,7 @@ Ask if they want to view all added items.
 
 Ask if they want recommendations for similar products.
 
-🚪 Scenario 2: If user does not want to continue
+Scenario 2: If user does not want to continue
 
 Ask if they want to view their total bill.
 

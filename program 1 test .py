@@ -20,6 +20,6 @@ if a.lower() == "yes":
     print("Product 7: Audio devices and accessories")
     print("Product 8: Gaming consoles and accessories")
     print("Product 9: Smart home devices and accessories")
-    print("Product 10: Proceeding to order selection...")
+    print("Proceeding to order selection...")
 else:
     print("Proceeding to order selection...")
