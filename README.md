@@ -8,6 +8,7 @@ Products in the store:
 5.	 wearable accessories
 6.	 Tv and accessories
 7.	music system and accessories
+9.smart home devices
 8.	gaming console and accessories
 input options available:
 -ask the user the type of product needed
@@ -137,6 +138,8 @@ Scenario 1: (If Yes — wants accessories)
 Scenario 2: (If No — doesn’t want accessories)
 
 •	Ask if he/she wants to exit or browse more categories
+13. smart home devices
+
 
 14. Gaming Console and Accessories
 15. 

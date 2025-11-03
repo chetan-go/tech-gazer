@@ -11,8 +11,15 @@ if __name__ == "__main__":
 a=input("Enter yes if u want to see all products available in our stores, No to continue and select your order:")
 if a.lower() == "yes":
     print("Here are all the products available in our stores:")
-    print("Product 1: Tech Gadget A")
-    print("Product 2: Tech Gadget B")
-    print("Product 3: Tech Gadget C")
+    print("Product 1: Phones and accessories")
+    print("Laptops and accessories")
+    print("Desktops and accessories")
+    print("printers and scanners")
+    print(' wearable accessories')
+    print("Tv and accessories")
+    print("Audio devices and accessories")
+    print("Gaming consoles and accessories")
+    print("Smart home devices and accessories")
+    print("Proceeding to order selection...")
 else:
     print("Proceeding to order selection...")
