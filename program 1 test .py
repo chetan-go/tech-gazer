@@ -34,3 +34,4 @@ print("7. Audio devices and accessories")
 print("8. Gaming consoles and accessories")
 print("9. Smart home devices and accessories")
 order = input("Enter the product number you wish to order (1-9): ")
+if
