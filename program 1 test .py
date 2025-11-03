@@ -41,7 +41,7 @@ if order == '1':
     phone_display=input("Enter the display type you want (LCD, AMOLED): ")
     phone_color=input("Enter the color you want (Black, White, Blue, Red): ")
     phone_sim=input("Enter the SIM type you want (Single SIM / Dual SIM): ")
-    phone_accessories=input("Enter the accessories you want (Charger, Earphones, Case, Screen Protector,Enter no if no accesories needed): ")
+    phone_accessories=input("Enter the accessories you want (Charger, Earphones, Case, Screen Protector,Enter all if all accessories needed and no if no accesories needed): ")
     print("You have ordered a Phone with the following specifications:")
     print(f"RAM Size: {phone_ram}")
     print(f"Storage Size: {phone_storage}")
