@@ -76,8 +76,8 @@ while reorder=='yes':
                 print(f"Accessories: {phone_accessories}")
                 print(f"Your order quantity is: {order_number}")
                 reorder=input("Do you want to place another order? (yes/no): ")
-        elif reorder.lower()=='no':
-            print("here is your Order Summary:")
-            for summary in order_summary:
-                print(summary,sep='\n')
-            print("Thank you for your order!")           
+else:
+    print("here is your Order Summary:")
+    for summary in order_summary:
+        print(summary,sep='\n')
+    print("Thank you for your order!")           
