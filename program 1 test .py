@@ -57,10 +57,10 @@ while reorder=='yes':
         print('cost of phone is Rs.30000')
         reconformation=input("Do you want to confirm your order? (yes/no): ")
         if reconformation.lower()=='yes':
+            order_number=order_number + 1
             print("Your order has been confirmed!")
             order_summary.append(f"Order {order_number}: Phone - RAM: {phone_ram}, Storage: {phone_storage}, Display: {phone_display}, Color: {phone_color}, SIM: {phone_sim}, Accessories: {phone_accessories}")
             reorder=input("Do you want to place another order? (yes/no): ")
-            order_number=order_number+1
         else:
             print("Your order has been cancelled.")
             print("would you like to place a new order?")
@@ -94,7 +94,6 @@ while reorder=='yes':
                     print("would you like to place a new order?")
 else:
     print("here is your Order Summary:")
-    print(order_summary)
     for summary in order_summary:
         print(summary,sep='\n')
     print("Thank you for your order!")           
