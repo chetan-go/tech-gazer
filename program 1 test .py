@@ -80,4 +80,4 @@ while reorder=='yes':
             print("here is your Order Summary:")
             for summary in order_summary:
                 print(summary,sep='\n')
-            print("Thank you for your order!")            
+            print("Thank you for your order!")           
