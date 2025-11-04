@@ -35,6 +35,7 @@ print("8. Gaming consoles and accessories")
 print("9. Smart home devices and accessories")
 reorder='yes'
 order_number=1
+order_summary=[]
 order = input("Enter the product number you wish to order (1-9): ")
 while reorder=='yes':
     if order == '1':
@@ -53,6 +54,7 @@ while reorder=='yes':
         print(f"SIM Type: {phone_sim}")
         print(f"Accessories: {phone_accessories}")
         print(f"Your order quantity is: {order_number}")
+        order_summary.append(f"Order {order_number}: Phone - RAM: {phone_ram}, Storage: {phone_storage}, Display: {phone_display}, Color: {phone_color}, SIM: {phone_sim}, Accessories: {phone_accessories}")
         reorder=input("Do you want to place another order? (yes/no): ")
         if reorder.lower()=='yes':
             order = input("Enter the product number you wish to order (1-9): ")
@@ -74,5 +76,5 @@ while reorder=='yes':
                 print(f"Accessories: {phone_accessories}")
                 print(f"Your order quantity is: {order_number}")
                 reorder=input("Do you want to place another order? (yes/no): ")
-        else:
+        elif reorder.lower()=='no':
             print("Thank you for your order!")            
