@@ -63,7 +63,7 @@ while reorder=='yes':
             reorder=input("Do you want to place another order? (yes/no): ")
         else:
             print("Your order has been cancelled.")
-            print("would you like to place a new order?")
+            reorder=("would you like to place a new order?(yes/no): ")
         if reorder.lower()=='yes':
             order = input("Enter the product number you wish to order (1-9): ")
             if order == '1':
@@ -91,6 +91,7 @@ while reorder=='yes':
                     reorder=input("Do you want to place another order? (yes/no): ")
                 else:
                     print("Your order has been cancelled.")
+                    reorder=("would you like to place a new order?(yes/no): ")
 else:
     print("here is your Order Summary:")
     for summary in order_summary:
