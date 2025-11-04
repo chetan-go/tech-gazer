@@ -91,7 +91,6 @@ while reorder=='yes':
                     reorder=input("Do you want to place another order? (yes/no): ")
                 else:
                     print("Your order has been cancelled.")
-                    print("would you like to place a new order?")
 else:
     print("here is your Order Summary:")
     for summary in order_summary:
