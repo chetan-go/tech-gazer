@@ -72,7 +72,7 @@ while reorder=='yes':
                 print("2.Earphones","price: Rs.1000")
                 print("3.Case","price: Rs.700")
                 print("4.Screen Protector","price: Rs.300")
-                phone_accessories=input("Enter the accessories you want (charger, earphones, case, ccreen protector, Enter all if all accessories needed): ").lower()
+                phone_accessories=input("Enter the accessories you want (charger, earphones, case, screen protector, Enter all if all accessories needed): ").lower()
                 if "all" in phone_accessories or "everything" in phone_accessories:
                     print("Your selected accessories are added to cart")
                     phone_cost += 500 + 1000 + 700 + 300
