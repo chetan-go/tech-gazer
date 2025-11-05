@@ -121,6 +121,7 @@ while reorder=='yes':
                         print("total phone cost after adding accessories is Rs.",phone_cost)
         elif phone_accessories_request.lower()=='no':
             phone_accessories='No accessories added'    
+        print("-------------------------------------------------------------")
         print("You have ordered a Phone with the following specifications:")
         print('-------------------------------------------------------------')
         print(f"RAM Size: {phone_ram}")
@@ -213,7 +214,7 @@ while reorder=='yes':
                                 print("total phone cost after adding accessories is Rs.",phone_cost)
                 elif phone_accessories_request.lower()=='no':
                     phone_accessories='No accessories added'
-
+                print("-------------------------------------------------------------")
                 print("You have ordered a Phone with the following specifications:")
                 print('-------------------------------------------------------------')
                 print(f"RAM Size: {phone_ram}")
@@ -244,14 +245,13 @@ else:
         print("===============")
         print(j)
         print()
-# ===== Improved Final Bill Section (multi-line specs) =====
 import shutil
 
 term_width = shutil.get_terminal_size((100, 20)).columns
-no_w = 4                # width for No.
-product_w = 15          # width for Product column
-cost_w = 12             # width for Cost column
-specs_w = term_width - (no_w + product_w + cost_w + 6)  # remaining width for specs
+no_w = 4
+product_w = 15
+cost_w = 12 
+specs_w = term_width - (no_w + product_w + cost_w + 6)
 
 order_conformation = input("Do you want to confirm all your orders? (yes/no): ")
 if order_conformation.lower() == 'yes':
@@ -268,7 +268,6 @@ if order_conformation.lower() == 'yes':
         print()
 
         total_bill = 0
-        # Header
         print("-" * term_width)
         header = f"{'No.':<{no_w}}  {'Product':<{product_w}}  {'Specifications':<{specs_w}}  {'Cost (Rs)':>{cost_w}}"
         print(header)
@@ -279,7 +278,6 @@ if order_conformation.lower() == 'yes':
             if cost_index == -1:
                 cost_index = item.rfind("Rs")
             if cost_index != -1:
-                # Extract digits after "Rs." or "Rs"
                 raw_cost = ''.join(ch for ch in item[cost_index+3:] if ch.isdigit())
                 item_cost = int(raw_cost) if raw_cost else 0
             else:
@@ -287,31 +285,21 @@ if order_conformation.lower() == 'yes':
 
             total_bill += item_cost
 
-            # Extract product and specs
             if '-' in item:
                 product_name, specs_str = item.split('-', 1)
                 product_name = product_name.strip()
                 specs_str = specs_str.strip()
             else:
-                # fallback if format differs
                 product_name = item[:product_w].strip()
                 specs_str = item
-
-            # split specs into parts by comma (each part becomes its own line)
             specs_parts = [s.strip() for s in specs_str.split(',') if s.strip()]
-
-            # Print first line with cost
             first_spec = specs_parts[0] if specs_parts else ""
             spec_preview = first_spec
             left_part = f"{str(i):<{no_w}}  {product_name:<{product_w}}  {spec_preview:<{specs_w}}"
             right_part = f"{item_cost:>{cost_w}}"
             print(left_part + "  " + right_part)
-
-            # Print remaining spec lines indented under Specifications column
             for extra in specs_parts[1:]:
                 print(" " * (no_w + 2 + product_w) + f"  {extra:<{specs_w}}")
-
-            # blank line between orders
             print()
 
         print("-" * term_width)
