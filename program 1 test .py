@@ -90,7 +90,7 @@ while reorder=='yes':
                         print("Added case to your cart.")
                         phone_cost += 700
                         print("total phone cost after adding accessories is Rs.",phone_cost)
-                    if "screen" in phone_accessories:  # catches "screen protector" or "screenprotector"
+                    if "screen" in phone_accessories:
                         print("Added screen protector to your cart.")
                         phone_cost += 300
                         print("total phone cost after adding accessories is Rs.",phone_cost)
@@ -115,7 +115,7 @@ while reorder=='yes':
                         print("Added case to your cart.")
                         phone_cost += 700
                         print("total phone cost after adding accessories is Rs.",phone_cost)
-                    if "screen" in phone_accessories:  # catches "screen protector" or "screenprotector"
+                    if "screen" in phone_accessories:
                         print("Added screen protector to your cart.")
                         phone_cost += 300
                         print("total phone cost after adding accessories is Rs.",phone_cost)
@@ -184,7 +184,7 @@ while reorder=='yes':
                                 print("Added case to your cart.")
                                 phone_cost += 700
                                 print("total phone cost after adding accessories is Rs.",phone_cost)
-                            if "screen" in phone_accessories:  # catches "screen protector" or "screenprotector"
+                            if "screen" in phone_accessories:
                                 print("Added screen protector to your cart.")
                                 phone_cost += 300
                                 print("total phone cost after adding accessories is Rs.",phone_cost)
@@ -208,7 +208,7 @@ while reorder=='yes':
                                 print("Added case to your cart.")
                                 phone_cost += 700
                                 print("total phone cost after adding accessories is Rs.",phone_cost)
-                            if "screen" in phone_accessories:  # catches "screen protector" or "screenprotector"
+                            if "screen" in phone_accessories:
                                 print("Added screen protector to your cart.")
                                 phone_cost += 300
                                 print("total phone cost after adding accessories is Rs.",phone_cost)
