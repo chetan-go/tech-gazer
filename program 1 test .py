@@ -275,7 +275,6 @@ if order_conformation.lower() == 'yes':
         print("-" * term_width)
 
         for i, item in enumerate(order_summary, start=1):
-            # Find cost robustly (last occurrence of "Rs." or "Rs")
             cost_index = item.rfind("Rs.")
             if cost_index == -1:
                 cost_index = item.rfind("Rs")
