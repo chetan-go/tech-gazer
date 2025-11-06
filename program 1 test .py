@@ -243,10 +243,25 @@ while reorder=='yes':
         laptop_size=input("Enter the laptop size you want (13 inch, 14 inch, 15 inch, 16 inch, 17 inch): ")
         laptop_ram=input("Enter the RAM size you want (8GB, 16GB, 32GB, 64GB): ")
         laptop_storage=input("Enter the storage size you want (256GB, 512GB, 1TB, 2TB): ")
-        laptop_processor=input("Enter the processor type you want (i5, i7, i9, Ryzen 5, Ryzen 7, Ryzen 9): ")
+        laptop_processor=input("Enter the processor type you want (i3, i5, i7, i9, Ryzen 3, Ryzen 5, Ryzen 7, Ryzen 9): ")
         laptop_graphics=input("Enter the graphics card you want (Integrated, Dedicated): ")
         if laptop_graphics.lower()=='integrated':
-            
+            if "ryzen" in laptop_processor.lower():
+                print("Integrated graphics comes free with Ryzen processors.")
+            elif laptop_processor.lower() in ['i3','i5','i7','i9']:
+                intel_graphics_choice=input("which integrated graphics do you want? (Intel UHD Graphics / Intel Iris Xe Graphics): ").lower()
+                if intel_graphics_choice=='intel uhd graphics':
+                    print("Intel UHD Graphics comes free with Intel processors.")
+                elif intel_graphics_choice=='intel iris xe graphics':
+                    laptop_cost += 3000
+        elif laptop_graphics.lower()=='dedicated':
+            dedicated_graphics_choice=input("which dedicated graphics card do you want? (NVIDIA GeForce GTX 1650 / NVIDIA GeForce RTX 3060 / AMD Radeon RX 6600M): ").lower()
+            if dedicated_graphics_choice=='nvidia geforce gtx 1650':
+                laptop_cost += 5000
+            elif dedicated_graphics_choice=='nvidia geforce rtx 3060':
+                laptop_cost += 15000
+            elif dedicated_graphics_choice=='amd radeon rx 6600m':
+                laptop_cost += 12000
         laptop_color=input("Enter the color you want (Silver, Black, Grey, Blue): ")
         laptop_operating_system=input("Enter the operating system you want (Windows, MacOS, Linux): ")
         if laptop_operating_system.lower()=='windows':
