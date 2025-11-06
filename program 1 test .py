@@ -248,12 +248,15 @@ while reorder=='yes':
         if laptop_graphics.lower()=='integrated':
             if "ryzen" in laptop_processor.lower():
                 print("Integrated graphics comes free with Ryzen processors.")
+                graphics_name="AMD Radeon Graphics"
             elif laptop_processor.lower() in ['i3','i5','i7','i9']:
                 intel_graphics_choice=input("which integrated graphics do you want? (Intel UHD Graphics / Intel Iris Xe Graphics): ").lower()
                 if intel_graphics_choice=='intel uhd graphics':
                     print("Intel UHD Graphics comes free with Intel processors.")
+                    graphics_name="Intel UHD Graphics"
                 elif intel_graphics_choice=='intel iris xe graphics':
                     laptop_cost += 3000
+                    graphics_name="Intel Iris Xe Graphics"
         elif laptop_graphics.lower()=='dedicated':
             dedicated_graphics_choice=input("which dedicated graphics card do you want? (NVIDIA GeForce GTX 1650 / NVIDIA GeForce RTX 3060 / AMD Radeon RX 6600M): ").lower()
             if dedicated_graphics_choice=='nvidia geforce gtx 1650':
@@ -339,11 +342,21 @@ while reorder=='yes':
         print("Processor:", laptop_processor)
         print("RAM:", laptop_ram)
         print("Storage:", laptop_storage)
-        print("Graphics Card:", laptop_graphics)
-        print("Operating System:", laptop_os)
+        print("Graphics Card:", graphics_name)
+        print("Operating System:", laptop_operating_system)
         print("Accessories:", laptop_accessories)
         print("Total Cost (Rs):", laptop_cost)
         print("-------------------------------------------------------------")
+        print(f"Your order quantity is: {order_quantity + 1}")
+        reconformation=input("Do you want to confirm your order? (yes/no): ")
+        if reconformation.lower()=='yes':
+            order_quantity=order_quantity + 1
+            print("Your order has been confirmed!")
+            order_summary.append(f"Laptop - Size: {laptop_size}, Processor: {laptop_processor}, RAM: {laptop_ram}, Storage: {laptop_storage}, Graphics Card: {graphics_name}, Operating System: {laptop_operating_system}, Accessories: {laptop_accessories}, Total Cost: Rs.{laptop_cost}")
+            reorder=input("Do you want to place another order? (yes/no): ")
+        else:
+            print("Your order has been cancelled.")
+            reorder=("would you like to place a new order?(yes/no): ")
 else:
     print("here is your Order Summary:")
     print_centered("================================")
