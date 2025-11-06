@@ -9,7 +9,7 @@ if __name__ == "__main__":
     print_centered("================================")
     print_centered("Welcome to Tech gazer!")
     print_centered("================================")
-print("We offer a wide range of tech products to cater fulfill to your needs.")
+print("We offer a wide range of tech products to fulfill to your needs.")
 
 a=input("Enter yes if u want to see all products available in our stores, No to continue and select your order:")
 if a.lower() == "yes":
