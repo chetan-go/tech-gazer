@@ -50,6 +50,7 @@ phone_cost=15000
 laptop_cost=50000
 desktop_cost=40000
 order_summary=[]
+graphics_name = "Not specified"
 order = input("Enter the product number you wish to order (1-9): ")
 while reorder=='yes':
     if order == '1':
@@ -262,10 +263,13 @@ while reorder=='yes':
                     dedicated_graphics_choice=input("which dedicated graphics card do you want? (NVIDIA GeForce GTX 1650 / NVIDIA GeForce RTX 3060 / AMD Radeon RX 6600M): ").lower()
                     if dedicated_graphics_choice=='nvidia geforce gtx 1650':
                         laptop_cost += 5000
+                        graphics_name="NVIDIA GeForce GTX 1650"
                     elif dedicated_graphics_choice=='nvidia geforce rtx 3060':
                         laptop_cost += 15000
+                        graphics_name="NVIDIA GeForce RTX 3060"
                     elif dedicated_graphics_choice=='amd radeon rx 6600m':
                         laptop_cost += 12000
+                        graphics_name="AMD Radeon RX 6600M"
                 laptop_color=input("Enter the color you want (Silver, Black, Grey, Blue): ")
                 laptop_operating_system=input("Enter the operating system you want (Windows, MacOS, Linux): ")
                 if laptop_operating_system.lower()=='windows':
@@ -383,10 +387,13 @@ while reorder=='yes':
             dedicated_graphics_choice=input("which dedicated graphics card do you want? (NVIDIA GeForce GTX 1650 / NVIDIA GeForce RTX 3060 / AMD Radeon RX 6600M): ").lower()
             if dedicated_graphics_choice=='nvidia geforce gtx 1650':
                 laptop_cost += 5000
+                graphics_name="NVIDIA GeForce GTX 1650"
             elif dedicated_graphics_choice=='nvidia geforce rtx 3060':
                 laptop_cost += 15000
+                graphics_name="NVIDIA GeForce RTX 3060"
             elif dedicated_graphics_choice=='amd radeon rx 6600m':
                 laptop_cost += 12000
+                graphics_name="AMD Radeon RX 6600M"
         laptop_color=input("Enter the color you want (Silver, Black, Grey, Blue): ")
         laptop_operating_system=input("Enter the operating system you want (Windows, MacOS, Linux): ")
         if laptop_operating_system.lower()=='windows':
@@ -598,10 +605,13 @@ while reorder=='yes':
                     dedicated_graphics_choice=input("which dedicated graphics card do you want? (NVIDIA GeForce GTX 1650 / NVIDIA GeForce RTX 3060 / AMD Radeon RX 6600M): ").lower()
                     if dedicated_graphics_choice=='nvidia geforce gtx 1650':
                         laptop_cost += 5000
+                        graphics_name="NVIDIA GeForce GTX 1650"
                     elif dedicated_graphics_choice=='nvidia geforce rtx 3060':
                         laptop_cost += 15000
+                        graphics_name="NVIDIA GeForce RTX 3060"
                     elif dedicated_graphics_choice=='amd radeon rx 6600m':
                         laptop_cost += 12000
+                        graphics_name="AMD Radeon RX 6600M"
                 laptop_color=input("Enter the color you want (Silver, Black, Grey, Blue): ")
                 laptop_operating_system=input("Enter the operating system you want (Windows, MacOS, Linux): ")
                 if laptop_operating_system.lower()=='windows':
