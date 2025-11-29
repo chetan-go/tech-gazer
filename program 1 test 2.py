@@ -357,28 +357,30 @@ if order_placement.lower()=='yes':
         print("================================")
         print()
         print("="*width)
-        S_no_width=5
-        item_width=30
-        cost_width=50
-        specification_width=width - (S_no_width + item_width + cost_width + 6)
-        header='S_No {:<{S_no_width}} | Item {:<{item_width}} | Specifications {:<{specification_width}} | Cost (Rs) {:>{cost_width}}'.format("", "", "", "", S_no_width=S_no_width, item_width=item_width, specification_width=specification_width, cost_width=cost_width)
+        S_no_width=4
+        item_width=20
+        cost_width=90
+        specification_width=width - (S_no_width + item_width + cost_width+9)
+        header='S_No {:<{S_no_width}}  Item {:<{item_width}}  Specifications {:<{specification_width}}  Cost (Rs) {:>{cost_width}}'.format("", "", "", "", S_no_width=S_no_width, item_width=item_width, specification_width=specification_width, cost_width=cost_width)
         print(header)
         print("="*width)
         total_amount=sum(amount_stored)
         j=1
-        specification_list=[]
-        specs=""
-        spcs_format='S_No {:<{S_no_width}} | Item {:<{item_width}} | Specifications {:<{specification_width}} | Cost (Rs) {:>{cost_width}}'.format("", "", specs, "", S_no_width=S_no_width, item_width=item_width, specification_width=specification_width, cost_width=cost_width)
+        specification_list={}
+        n=""
         for i in order_summary:
             for k in order_summary[i]:
                 if k != "category" and k != "Total Cost (Rs)":
-                    a=k,':',order_summary[i][k]
-                    specification_list.append(a)
-                    S_no=str(j)
-                    Item=order_summary[i]["category"]
-                    cost=str(order_summary[i]['Total Cost (Rs)'])
-                    row_format='S_No {:<{S_no_width}} | Item {:<{item_width}} | Specifications {:<{specification_width}} | Cost (Rs) {:>{cost_width}}'.format(S_no,Item,'',cost, S_no_width=S_no_width, item_width=item_width, specification_width=specification_width, cost_width=cost_width)
-                    print(row_format)
-                    j+=1
-                    
-                
+                    specification_list[k]=order_summary[i][k]
+            S_no=str(j)
+            Item=order_summary[i]["category"]        
+            cost=str(order_summary[i]['Total Cost (Rs)'])
+            row_format='{:<{S_no_width}}  {:<{item_width}}  {:<{specification_width}}  {:>{cost_width}}'.format(S_no,Item,'',cost, S_no_width=S_no_width, item_width=item_width, specification_width=specification_width, cost_width=cost_width)
+            print(row_format)
+            j+=1
+            for spec in specification_list:
+                specs_format='{:<{S_no_width}}  {:<{item_width}}  {:<{specification_width}}  {:>{cost_width}}'.format(" ", " ", spec+':'+specification_list[spec], " ", S_no_width=S_no_width, item_width=item_width, specification_width=specification_width, cost_width=cost_width)
+                print(specs_format)        
+        total_amount=sum(amount_stored)                
+        total_amount_format="{:^{width}}".format("Total Amount (Rs): "+str(total_amount), width=width)
+        print(total_amount_format)    
