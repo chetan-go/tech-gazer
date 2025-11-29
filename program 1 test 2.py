@@ -121,11 +121,11 @@ while True:
         print("Accessories:",phone_accessories)
         print("your total phone cost is Rs.",phone_cost)
         print("Your order quantity is:",order_quantity + 1)
-        reconformation=input("Do you want to confirm your order? (yes/no): ")
+        reconformation=input("Do you want to confirm your order to be added into cart? (yes/no): ")
         if reconformation.lower()=='yes':
             order_quantity=order_quantity + 1
-            print("Your order has been confirmed!")
-            order_summary[order_quantity]={"category":"Phone", "RAM":phone_ram, "Storage":phone_storage, "Display":phone_display, "Color":phone_color, "SIM":phone_sim, "Accessories":phone_accessories}
+            print("Your order has been added!")
+            order_summary[order_quantity]={"category":"Phone", "RAM":phone_ram, "Storage":phone_storage, "Display":phone_display, "Color":phone_color, "SIM":phone_sim, "Accessories":phone_accessories, "Total Cost (Rs)":phone_cost}
             amount_stored.append(phone_cost)
             reorder=input("Do you want to place another order? (yes/no): ")
             if reorder.lower()=='yes':
@@ -256,11 +256,11 @@ while True:
         print("Total Cost (Rs):", laptop_cost)
         print("-------------------------------------------------------------")
         print("Your order quantity is:",order_quantity + 1)
-        reconformation=input("Do you want to confirm your order? (yes/no): ")
+        reconformation=input("Do you want to confirm your order to be added into cart? (yes/no): ")
         if reconformation.lower()=='yes':
             order_quantity=order_quantity + 1
-            print("Your order has been confirmed!")
-            order_summary[order_quantity]={"category":"Laptop", "Size":laptop_size, "Processor":laptop_processor, "RAM":laptop_ram, "Storage":laptop_storage, "Graphics":graphics_name, "Operating System":laptop_operating_system, "Accessories":laptop_accessories}
+            print("Your order has been added!")
+            order_summary[order_quantity]={"category":"Laptop", "Size":laptop_size, "Processor":laptop_processor, "RAM":laptop_ram, "Storage":laptop_storage, "Graphics":graphics_name, "Operating System":laptop_operating_system, "Accessories":laptop_accessories, "Total Cost (Rs)":laptop_cost}
             amount_stored.append(laptop_cost)
             reorder=input("Do you want to place another order? (yes/no): ")
             if reorder.lower()=='yes':
@@ -276,16 +276,104 @@ while True:
             else:
                 print("Thank you for visiting Tech Gazer. Have a great day!")
                 break
-print("================================")
-print("here is your Order Summary:")
-print("================================")
-print("Order Summary")
-print("================================")
-j=1
-for i in (order_summary):
-    print("===============")
-    print("Order",j,":")
-    print("===============")
-    print(order_summary[j])
-    print()
-    j+=1
+order_placement=input("Would you like to place your order now? (yes/no): ")
+if order_placement.lower()=='yes':
+    cart=input("Would you like to see your cart before placing order? (yes/no): ")
+    if cart.lower()=='yes':
+        print("================================")
+        print("here is your Order Summary:")
+        print("================================")
+        print()
+        print("================================")
+        print("Order Summary")
+        print("================================")
+        j=1
+        for i in (order_summary):
+            print("===============")
+            print("Order",j,":")
+            print("===============")
+            for k in order_summary[i]:
+                print(k,':',order_summary[i][k])
+            j+=1
+        print("================================")
+        print('proceeding to address selection...')
+        print("================================")
+        address=input("Enter your delivery address: ")
+        print('your order will be delivered to:',address)
+        print("================================")
+        print('proceeding to payment...')
+        print("================================")
+        payment_amount=sum(amount_stored)
+        print("Your total payment amount is Rs.",payment_amount)
+        payment_method=input("Enter your payment method (Credit Card, Debit Card, UPI, Net Banking, Cash on Delivery): ")
+        if payment_method.lower() in ['credit card','debit card','upi','net banking']:
+            print('proceeding to',payment_method,'payment gateway...')
+            print('your payment gateway is ready.')
+            print('Kindly click on the link below to complete your payment:')
+            print('https://www.tech-gazer.com/payment-gateway')
+            payment=input('enter done after completing your payment.')
+            if payment.lower()=='done':
+                print('your payment has been received successfully!')
+                print('Thank you for shopping with Tech Gazer. Your order will be delivered within 7 days.')
+            else:
+                print('payment not completed. please try again later.')
+                print("exiting....")
+        elif payment_method.lower()=='cash on delivery':
+            print('You have selected Cash on Delivery. Please keep the exact amount ready at the time of delivery.')
+            print('Thank you for shopping with Tech Gazer. Your order will be delivered within 7 days.')
+
+    elif cart.lower()=='no':
+        print("Proceeding without showing cart.")
+        print("================================")
+        print('proceeding to address selection...')
+        print("================================")
+        address=input("Enter your delivery address: ")
+        print('your order will be delivered to:',address)
+        print("================================")
+        print('proceeding to payment...')
+        print("================================")
+        payment_amount=sum(amount_stored)
+        print("Your total payment amount is Rs.",payment_amount)
+        payment_method=input("Enter your payment method (Credit Card, Debit Card, UPI, Net Banking, Cash on Delivery): ")
+        if payment_method.lower() in ['credit card','debit card','upi','net banking']:
+            print('proceeding to',payment_method,'payment gateway...')
+            print('your payment gateway is ready.')
+            print('Kindly click on the link below to complete your payment:')
+            print('https://www.tech-gazer.com/payment-gateway')
+            payment=input('enter done after completing your payment:')
+            if payment.lower()=='done':
+                print('your payment has been received successfully!')
+                print('Thank you for shopping with Tech Gazer. Your order will be delivered within 7 days.')
+            else:
+                print('payment not completed. please try again later.')
+                print("exiting....")
+        elif payment_method.lower()=='cash on delivery':
+            print('You have selected Cash on Delivery. Please keep the exact amount ready at the time of delivery.')
+            print('Thank you for shopping with Tech Gazer. Your order will be delivered within 7 days.')
+    bill=input("Would you like to see your final bill? (yes/no): ")
+    if bill.lower()=='yes':
+        print("================================")
+        print("here is your Final Bill:")
+        print("================================")
+        print()
+        print("="*width)
+        S_no_width=5
+        item_width=30
+        cost_width=50
+        specification_width=width - (S_no_width + item_width + cost_width + 6)
+        header='S_No {:<S_no_width} | Item {:<item_width} | Specifications {:<specification_width} | Cost (Rs) {:>cost_width}'
+        print("="*width)
+        total_amount=sum(amount_stored)
+        j=1
+        specification_list=[]
+        for i in order_summary:
+            for k in order_summary[i]:
+                if k != "category" and k != "Total Cost (Rs)":
+                    specification_list.insert(k,':',order_summary[i][k])
+                    S_no=str(j)
+                    Item=order_summary[i]["category"]
+                    cost=str(order_summary[i]['Total Cost (Rs)'])
+                    print(header.format(S_no, Item, cost))
+            for spec in specification_list:
+                print(header.format(spec))
+                
