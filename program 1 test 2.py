@@ -311,7 +311,7 @@ if order_placement.lower()=='yes':
             print('your payment gateway is ready.')
             print('Kindly click on the link below to complete your payment:')
             print('https://www.tech-gazer.com/payment-gateway')
-            payment=input('enter done after completing your payment.')
+            payment=input('enter done after completing your payment:')
             if payment.lower()=='done':
                 print('your payment has been received successfully!')
                 print('Thank you for shopping with Tech Gazer. Your order will be delivered within 7 days.')
@@ -361,19 +361,24 @@ if order_placement.lower()=='yes':
         item_width=30
         cost_width=50
         specification_width=width - (S_no_width + item_width + cost_width + 6)
-        header='S_No {:<S_no_width} | Item {:<item_width} | Specifications {:<specification_width} | Cost (Rs) {:>cost_width}'
+        header='S_No {:<{S_no_width}} | Item {:<{item_width}} | Specifications {:<{specification_width}} | Cost (Rs) {:>{cost_width}}'.format("", "", "", "", S_no_width=S_no_width, item_width=item_width, specification_width=specification_width, cost_width=cost_width)
+        print(header)
         print("="*width)
         total_amount=sum(amount_stored)
         j=1
         specification_list=[]
+        specs=""
+        spcs_format='S_No {:<{S_no_width}} | Item {:<{item_width}} | Specifications {:<{specification_width}} | Cost (Rs) {:>{cost_width}}'.format("", "", specs, "", S_no_width=S_no_width, item_width=item_width, specification_width=specification_width, cost_width=cost_width)
         for i in order_summary:
             for k in order_summary[i]:
                 if k != "category" and k != "Total Cost (Rs)":
-                    specification_list.insert(k,':',order_summary[i][k])
+                    a=k,':',order_summary[i][k]
+                    specification_list.append(a)
                     S_no=str(j)
                     Item=order_summary[i]["category"]
                     cost=str(order_summary[i]['Total Cost (Rs)'])
-                    print(header.format(S_no, Item, cost))
-            for spec in specification_list:
-                print(header.format(spec))
+                    row_format='S_No {:<{S_no_width}} | Item {:<{item_width}} | Specifications {:<{specification_width}} | Cost (Rs) {:>{cost_width}}'.format(S_no,Item,'',cost, S_no_width=S_no_width, item_width=item_width, specification_width=specification_width, cost_width=cost_width)
+                    print(row_format)
+                    j+=1
+                    
                 
