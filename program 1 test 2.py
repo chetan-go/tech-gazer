@@ -135,7 +135,7 @@ while True:
                 break
         else:
             print("Your order has been cancelled.")
-            reorder=("would you like to place a new order?(yes/no): ")
+            reorder=input("would you like to place a new order?(yes/no): ")
             if reorder.lower()=='yes':
                 pass
             else:
@@ -235,12 +235,6 @@ while True:
                     if "keyboard" in laptop_accessories:
                         print("Added keyboard to your cart.")
                         laptop_cost += 1200
-            elif laptop_accessories_menu.lower()=='no':
-                print("Proceeding without showing accessories menu.")
-                laptop_accessories=input("Enter the accessories you want (Charger, Laptop Bag, Mouse, Keyboard, Enter all if all accessories needed): ").lower()
-                if "all" in laptop_accessories or "everything" in laptop_accessories:
-                    print("Your selected accessories are added to cart")
-                    laptop_cost += 1000 + 1500 + 800 + 1200
         elif laptop_accessories_request.lower()=='no':
             laptop_accessories='No accessories added'
         print("-------------------------------------------------------------")
@@ -276,111 +270,115 @@ while True:
             else:
                 print("Thank you for visiting Tech Gazer. Have a great day!")
                 break
-order_placement=input("Would you like to place your order now? (yes/no): ")
-if order_placement.lower()=='yes':
-    cart=input("Would you like to see your cart before placing order? (yes/no): ")
-    if cart.lower()=='yes':
-        print("================================")
-        print("here is your Order Summary:")
-        print("================================")
-        print()
-        print("================================")
-        print("Order Summary")
-        print("================================")
-        j=1
-        for i in (order_summary):
-            print("===============")
-            print("Order",j,":")
-            print("===============")
-            for k in order_summary[i]:
-                print(k,':',order_summary[i][k])
-            j+=1
-        print("================================")
-        print('proceeding to address selection...')
-        print("================================")
-        address=input("Enter your delivery address: ")
-        print('your order will be delivered to:',address)
-        print("================================")
-        print('proceeding to payment...')
-        print("================================")
-        payment_amount=sum(amount_stored)
-        print("Your total payment amount is Rs.",payment_amount)
-        payment_method=input("Enter your payment method (Credit Card, Debit Card, UPI, Net Banking, Cash on Delivery): ")
-        if payment_method.lower() in ['credit card','debit card','upi','net banking']:
-            print('proceeding to',payment_method,'payment gateway...')
-            print('your payment gateway is ready.')
-            print('Kindly click on the link below to complete your payment:')
-            print('https://www.tech-gazer.com/payment-gateway')
-            payment=input('enter done after completing your payment:')
-            if payment.lower()=='done':
-                print('your payment has been received successfully!')
+if len(order_summary)==0:
+    print("No orders placed. Exiting the program.")
+    print("Thank you for visiting Tech Gazer. Have a great day!")
+else:
+    order_placement=input("Would you like to place your order now? (yes/no): ")
+    if order_placement.lower()=='yes':
+        cart=input("Would you like to see your cart before placing order? (yes/no): ")
+        if cart.lower()=='yes':
+            print("================================")
+            print("here is your Order Summary:")
+            print("================================")
+            print()
+            print("================================")
+            print("Order Summary")
+            print("================================")
+            j=1
+            for i in (order_summary):
+                print("===============")
+                print("Order",j,":")
+                print("===============")
+                for k in order_summary[i]:
+                    print(k,':',order_summary[i][k])
+                j+=1
+            print("================================")
+            print('proceeding to address selection...')
+            print("================================")
+            address=input("Enter your delivery address: ")
+            print('your order will be delivered to:',address)
+            print("================================")
+            print('proceeding to payment...')
+            print("================================")
+            payment_amount=sum(amount_stored)
+            print("Your total payment amount is Rs.",payment_amount)
+            payment_method=input("Enter your payment method (Credit Card, Debit Card, UPI, Net Banking, Cash on Delivery): ")
+            if payment_method.lower() in ['credit card','debit card','upi','net banking']:
+                print('proceeding to',payment_method,'payment gateway...')
+                print('your payment gateway is ready.')
+                print('Kindly click on the link below to complete your payment:')
+                print('https://www.tech-gazer.com/payment-gateway')
+                payment=input('enter done after completing your payment:')
+                if payment.lower()=='done':
+                    print('your payment has been received successfully!')
+                    print('Thank you for shopping with Tech Gazer. Your order will be delivered within 7 days.')
+                else:
+                    print('payment not completed. please try again later.')
+                    print("exiting....")
+            elif payment_method.lower()=='cash on delivery':
+                print('You have selected Cash on Delivery. Please keep the exact amount ready at the time of delivery.')
                 print('Thank you for shopping with Tech Gazer. Your order will be delivered within 7 days.')
-            else:
-                print('payment not completed. please try again later.')
-                print("exiting....")
-        elif payment_method.lower()=='cash on delivery':
-            print('You have selected Cash on Delivery. Please keep the exact amount ready at the time of delivery.')
-            print('Thank you for shopping with Tech Gazer. Your order will be delivered within 7 days.')
 
-    elif cart.lower()=='no':
-        print("Proceeding without showing cart.")
-        print("================================")
-        print('proceeding to address selection...')
-        print("================================")
-        address=input("Enter your delivery address: ")
-        print('your order will be delivered to:',address)
-        print("================================")
-        print('proceeding to payment...')
-        print("================================")
-        payment_amount=sum(amount_stored)
-        print("Your total payment amount is Rs.",payment_amount)
-        payment_method=input("Enter your payment method (Credit Card, Debit Card, UPI, Net Banking, Cash on Delivery): ")
-        if payment_method.lower() in ['credit card','debit card','upi','net banking']:
-            print('proceeding to',payment_method,'payment gateway...')
-            print('your payment gateway is ready.')
-            print('Kindly click on the link below to complete your payment:')
-            print('https://www.tech-gazer.com/payment-gateway')
-            payment=input('enter done after completing your payment:')
-            if payment.lower()=='done':
-                print('your payment has been received successfully!')
+        elif cart.lower()=='no':
+            print("Proceeding without showing cart.")
+            print("================================")
+            print('proceeding to address selection...')
+            print("================================")
+            address=input("Enter your delivery address: ")
+            print('your order will be delivered to:',address)
+            print("================================")
+            print('proceeding to payment...')
+            print("================================")
+            payment_amount=sum(amount_stored)
+            print("Your total payment amount is Rs.",payment_amount)
+            payment_method=input("Enter your payment method (Credit Card, Debit Card, UPI, Net Banking, Cash on Delivery): ")
+            if payment_method.lower() in ['credit card','debit card','upi','net banking']:
+                print('proceeding to',payment_method,'payment gateway...')
+                print('your payment gateway is ready.')
+                print('Kindly click on the link below to complete your payment:')
+                print('https://www.tech-gazer.com/payment-gateway')
+                payment=input('enter done after completing your payment:')
+                if payment.lower()=='done':
+                    print('your payment has been received successfully!')
+                    print('Thank you for shopping with Tech Gazer. Your order will be delivered within 7 days.')
+                else:
+                    print('payment not completed. please try again later.')
+                    print("exiting....")
+            elif payment_method.lower()=='cash on delivery':
+                print('You have selected Cash on Delivery. Please keep the exact amount ready at the time of delivery.')
                 print('Thank you for shopping with Tech Gazer. Your order will be delivered within 7 days.')
-            else:
-                print('payment not completed. please try again later.')
-                print("exiting....")
-        elif payment_method.lower()=='cash on delivery':
-            print('You have selected Cash on Delivery. Please keep the exact amount ready at the time of delivery.')
-            print('Thank you for shopping with Tech Gazer. Your order will be delivered within 7 days.')
-    bill=input("Would you like to see your final bill? (yes/no): ")
-    if bill.lower()=='yes':
-        print("================================")
-        print("here is your Final Bill:")
-        print("================================")
-        print()
-        print("="*width)
-        S_no_width=4
-        item_width=20
-        cost_width=90
-        specification_width=width - (S_no_width + item_width + cost_width+9)
-        header='S_No {:<{S_no_width}}  Item {:<{item_width}}  Specifications {:<{specification_width}}  Cost (Rs) {:>{cost_width}}'.format("", "", "", "", S_no_width=S_no_width, item_width=item_width, specification_width=specification_width, cost_width=cost_width)
-        print(header)
-        print("="*width)
-        total_amount=sum(amount_stored)
-        j=1
-        specification_list={}
-        n=""
-        for i in order_summary:
-            for k in order_summary[i]:
-                if k != "category" and k != "Total Cost (Rs)":
-                    specification_list[k]=order_summary[i][k]
-            S_no=str(j)
-            Item=order_summary[i]["category"]        
-            cost=str(order_summary[i]['Total Cost (Rs)'])
-            row_format='{:<{S_no_width}}  {:<{item_width}}  {:<{specification_width}}  {:>{cost_width}}'.format(S_no,Item,'',cost, S_no_width=S_no_width, item_width=item_width, specification_width=specification_width, cost_width=cost_width)
-            print(row_format)
-            j+=1
-            for spec in specification_list:
-                specs_format='{:<{S_no_width}}  {:<{item_width}}  {:<{specification_width}}  {:>{cost_width}}'.format(" ", " ", spec+':'+specification_list[spec], " ", S_no_width=S_no_width, item_width=item_width, specification_width=specification_width, cost_width=cost_width)
-                print(specs_format)        
-        total_amount=sum(amount_stored)                
-        total_amount_format="{:^{width}}".format("Total Amount (Rs): "+str(total_amount), width=width)
-        print(total_amount_format)    
+        bill=input("Would you like to see your final bill? (yes/no): ")
+        if bill.lower()=='yes':
+            print("================================")
+            print("here is your Final Bill:")
+            print("================================")
+            print()
+            print("="*width)
+            S_no_width=4
+            item_width=20
+            cost_width=90
+            specification_width=width - (S_no_width + item_width + cost_width+9)
+            header='S_No {:<{S_no_width}}  Item {:<{item_width}}  Specifications {:<{specification_width}}  Cost (Rs) {:>{cost_width}}'.format("", "", "", "", S_no_width=S_no_width, item_width=item_width, specification_width=specification_width, cost_width=cost_width)
+            print(header)
+            print("="*width)
+            total_amount=sum(amount_stored)
+            j=1
+            specification_list={}
+            n=""
+            for i in order_summary:
+                specification_list={}
+                for k in order_summary[i]:
+                    if k != "category" and k != "Total Cost (Rs)":
+                        specification_list[k]=order_summary[i][k]
+                S_no=str(j)
+                Item=order_summary[i]["category"]        
+                cost=str(order_summary[i]['Total Cost (Rs)'])
+                row_format='{:<{S_no_width}}  {:<{item_width}}  {:<{specification_width}}  {:>{cost_width}}'.format(S_no,Item,'',cost, S_no_width=S_no_width, item_width=item_width, specification_width=specification_width, cost_width=cost_width)
+                print(row_format)
+                j+=1
+                for spec in specification_list:
+                    specs_format='{:<{S_no_width}}  {:<{item_width}}  {:<{specification_width}}  {:>{cost_width}}'.format(" ", " ", spec+':'+specification_list[spec], " ", S_no_width=S_no_width, item_width=item_width, specification_width=specification_width, cost_width=cost_width)
+                    print(specs_format)                       
+            total_amount_format="{:^{width}}".format("Total Amount (Rs): "+str(total_amount), width=width)
+            print(total_amount_format)   
