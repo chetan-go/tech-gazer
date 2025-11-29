@@ -2,7 +2,7 @@ import shutil
 width = shutil.get_terminal_size().columns
 print_centered =width // 2
 print(' '*print_centered,'Welcome To Tech Gazer!')
-order_summary=[]
+order_summary={}
 order_quantity=0
 print(' '*print_centered,"================================")
 print(' '*print_centered,"Welcome to Tech gazer!")
@@ -112,8 +112,8 @@ while True:
         print("-------------------------------------------------------------")
         print("You have ordered a Phone with the following specifications:")
         print('-------------------------------------------------------------')
-        print(f"RAM Size: {phone_ram}")
-        print(f"Storage Size: {phone_storage}")
+        print("RAM Size:" phone_ram)
+        print("Storage Size:"phone_storage)
         print(f"Display Type: {phone_display}")
         print(f"Color: {phone_color}")
         print(f"SIM Type: {phone_sim}")
