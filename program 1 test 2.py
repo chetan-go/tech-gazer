@@ -4,6 +4,7 @@ print_centered =width // 2
 print(' '*print_centered,'Welcome To Tech Gazer!')
 order_summary={}
 order_quantity=0
+amount_stored=[]
 print(' '*print_centered,"================================")
 print(' '*print_centered,"Welcome to Tech gazer!")
 print(' '*print_centered,"================================")
@@ -112,19 +113,20 @@ while True:
         print("-------------------------------------------------------------")
         print("You have ordered a Phone with the following specifications:")
         print('-------------------------------------------------------------')
-        print("RAM Size:" phone_ram)
-        print("Storage Size:"phone_storage)
-        print(f"Display Type: {phone_display}")
-        print(f"Color: {phone_color}")
-        print(f"SIM Type: {phone_sim}")
-        print(f"Accessories: {phone_accessories}")
+        print("RAM Size:", phone_ram)
+        print("Storage Size:",phone_storage)
+        print("Display Type:",phone_display)
+        print("Color:",phone_color)
+        print("SIM Type:",phone_sim)
+        print("Accessories:",phone_accessories)
         print("your total phone cost is Rs.",phone_cost)
-        print(f"Your order quantity is: {order_quantity + 1}")
+        print("Your order quantity is:",order_quantity + 1)
         reconformation=input("Do you want to confirm your order? (yes/no): ")
         if reconformation.lower()=='yes':
             order_quantity=order_quantity + 1
             print("Your order has been confirmed!")
-            order_summary.append(f"Phone - RAM: {phone_ram}, Storage: {phone_storage}, Display: {phone_display}, Color: {phone_color}, SIM: {phone_sim}, Accessories: {phone_accessories}, Total Cost: Rs.{phone_cost}")
+            order_summary[order_quantity]={"category":"Phone", "RAM":phone_ram, "Storage":phone_storage, "Display":phone_display, "Color":phone_color, "SIM":phone_sim, "Accessories":phone_accessories}
+            amount_stored.append(phone_cost)
             reorder=input("Do you want to place another order? (yes/no): ")
             if reorder.lower()=='yes':
                 pass
@@ -253,12 +255,13 @@ while True:
         print("Accessories:", laptop_accessories)
         print("Total Cost (Rs):", laptop_cost)
         print("-------------------------------------------------------------")
-        print(f"Your order quantity is: {order_quantity + 1}")
+        print("Your order quantity is:",order_quantity + 1)
         reconformation=input("Do you want to confirm your order? (yes/no): ")
         if reconformation.lower()=='yes':
             order_quantity=order_quantity + 1
             print("Your order has been confirmed!")
-            order_summary.append(f"Laptop - Size: {laptop_size}, Processor: {laptop_processor}, RAM: {laptop_ram}, Storage: {laptop_storage}, Graphics Card: {graphics_name}, Operating System: {laptop_operating_system}, Accessories: {laptop_accessories}, Total Cost: Rs.{laptop_cost}")
+            order_summary[order_quantity]={"category":"Laptop", "Size":laptop_size, "Processor":laptop_processor, "RAM":laptop_ram, "Storage":laptop_storage, "Graphics":graphics_name, "Operating System":laptop_operating_system, "Accessories":laptop_accessories}
+            amount_stored.append(laptop_cost)
             reorder=input("Do you want to place another order? (yes/no): ")
             if reorder.lower()=='yes':
                 pass
@@ -273,4 +276,16 @@ while True:
             else:
                 print("Thank you for visiting Tech Gazer. Have a great day!")
                 break
-print(order_summary)
+print("================================")
+print("here is your Order Summary:")
+print("================================")
+print("Order Summary")
+print("================================")
+j=1
+for i in (order_summary):
+    print("===============")
+    print("Order",j,":")
+    print("===============")
+    print(order_summary[j])
+    print()
+    j+=1
