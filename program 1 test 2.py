@@ -39,6 +39,7 @@ while True:
     phone_cost=15000
     laptop_cost=50000
     desktop_cost=40000
+    printer_cost=5000
     graphics_name = "Not specified"
     order = input("Enter the product number you wish to order (1-9): ")
     if order == '1':
@@ -411,6 +412,54 @@ while True:
             else:
                 print("Thank you for visiting Tech Gazer. Have a great day!")
                 break
+    elif order=='4':
+        print("=======================================")
+        print("You have selected Printers and scanners.")
+        print("=======================================")
+        printer_type=input("Enter the type of printer you want (Inkjet, Laser, All-in-one-printers and scanners): ")
+        printer_color=input("Enter the color you want (Black-White, colour): ")
+        printer_connectivity=input("Enter the connectivity type you want (USB, Wi-Fi, Ethernet): ")
+        printer_resolution=input("Enter the resolution you want (600x600 dpi, 1200x1200 dpi, 2400x1200 dpi): ")
+        printer_accessories_request=input("would you like to add accessories in your printer? (yes/no): ").lower()
+        if printer_accessories_request.lower()=='yes':
+            printer_accessories_menu=input("would you like to see the accessories available? (yes/no): ").lower()
+            if printer_accessories_menu.lower()=='yes':
+                print("=============================================================")
+                print("Here are the available accessories for your printer:")
+                print("=============================================================")
+                print("accessories available:")
+                print("1.Extra Ink Cartridges","price: Rs.1500")
+                print("2.Paper Ream","price: Rs.800")
+                printer_accessories=input("Enter the accessories you want (Extra Ink Cartridges, Paper Ream, Enter all if all accessories needed): ").lower()
+                if "all" in printer_accessories or "everything" in printer_accessories:
+                    print("Your selected accessories are added to cart")
+                    printer_cost += 1500 + 800
+                    print("total printer cost after adding accessories is Rs.",printer_cost)
+                else:
+                    if "extra ink cartridges" in printer_accessories:
+                         print("Added extra ink cartridges to your cart.")
+                         printer_cost += 1500
+                         print("total printer cost after adding accessories is Rs.",printer_cost)
+                    if "paper ream" in printer_accessories:
+                        print("Added paper ream to your cart.")
+                        printer_cost += 800
+                        print("total printer cost after adding accessories is Rs.",printer_cost)
+            elif printer_accessories_menu.lower()=='no':
+                print("Proceeding without showing accessories menu.")
+                printer_accessories=input("Enter the accessories you want (Extra Ink Cartridges, Paper Ream, Enter all if all accessories needed): ").lower()
+                if "all" in printer_accessories or "everything" in printer_accessories:
+                    print("Your selected accessories are added to cart")
+                    printer_cost += 1500 + 800
+                    print("total printer cost after adding accessories is Rs.",printer_cost)
+                else:
+                    if "extra ink cartridges" in printer_accessories:
+                         print("Added extra ink cartridges to your cart.")
+                         printer_cost += 1500
+                         print("total printer cost after adding accessories is Rs.",printer_cost)
+                    if "paper ream" in printer_accessories:
+                        print("Added paper ream to your cart.")
+                        printer_cost += 800
+                        print("total printer cost after adding accessories is Rs.",printer_cost)
     elif order == '9':
         print("Exiting the order placement section.")
         print("Thank you for visiting Tech Gazer. Have a great day!")
