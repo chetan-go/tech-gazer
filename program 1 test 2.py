@@ -271,6 +271,146 @@ while True:
             else:
                 print("Thank you for visiting Tech Gazer. Have a great day!")
                 break
+    elif order == '3':
+        print("===========================================")
+        print("You have selected Desktops and accessories.")
+        print("===========================================")
+        desktop_processor=input("Enter the processor type you want (i3, i5, i7, i9, Ryzen 3, Ryzen 5, Ryzen 7, Ryzen 9): ")
+        desktop_ram=input("Enter the RAM size you want (8GB, 16GB, 32GB, 64GB): ")
+        desktop_storage=input("Enter the storage size you want (256GB, 512GB, 1TB, 2TB): ")
+        desktop_graphics=input("Enter the graphics card you want (Integrated, Dedicated): ")
+        if desktop_graphics.lower()=='integrated':
+            if "ryzen" in desktop_processor.lower():
+                print("Integrated graphics comes free with Ryzen processors.")
+                graphics_name="AMD Radeon Graphics"
+            elif desktop_processor.lower() in ['i3','i5','i7','i9']:
+                intel_graphics_choice=input("which integrated graphics do you want? (Intel UHD Graphics / Intel Iris Xe Graphics): ").lower()
+                if 'uhd' in intel_graphics_choice:
+                    print("Intel UHD Graphics comes free with Intel processors.")
+                    graphics_name="Intel UHD Graphics"
+                elif 'iris xe' in intel_graphics_choice:
+                    desktop_cost += 3000
+                    graphics_name="Intel Iris Xe Graphics"
+        elif desktop_graphics.lower()=='dedicated':
+            dedicated_graphics_choice=input("which dedicated graphics card do you want? (NVIDIA GeForce GTX 1650 / NVIDIA GeForce RTX 3060 / AMD Radeon RX 6600M): ").lower()
+            if 'gtx 1650' in dedicated_graphics_choice:
+                desktop_cost += 5000
+                graphics_name="NVIDIA GeForce GTX 1650"
+            elif 'rtx 3060' in dedicated_graphics_choice:
+                desktop_cost += 15000
+                graphics_name="NVIDIA GeForce RTX 3060"
+            elif 'rx 6600m' in dedicated_graphics_choice:
+                desktop_cost += 12000
+                graphics_name="AMD Radeon RX 6600M"
+        desktop_operating_system=input("Enter the operating system you want (Windows, Linux, MacOS): ")
+        if desktop_operating_system.lower()=='windows':
+            desktop_cost += 2000
+        elif desktop_operating_system.lower()=='linux':
+            desktop_cost += 5000
+        elif desktop_operating_system.lower()=='macos':
+            desktop_cost += 10000
+        desktop_monitor=input("Would you like to add a monitor? (yes/no): ")
+        monitor_choice1="No monitor added"
+        if desktop_monitor.lower()=='yes':
+            desktop_cost += 8000
+            monitor_choice=input("Which monitor would you like to add? (24 inch / 27 inch / 32 inch): ")
+            print("Added",monitor_choice,"monitor to your cart.")
+            monitor_choice1=monitor_choice + " monitor"
+        elif desktop_monitor.lower()=='no':
+            print("No monitor added to your cart.")
+        keyboard_mouse_combo=input("Would you like to add a keyboard and mouse combo? (yes/no): ")
+        keyboard_mouse_choice1="No keyboard and mouse combo added"
+        if keyboard_mouse_combo.lower()=='yes':
+            desktop_cost += 1500
+            print("Added keyboard and mouse combo to your cart.")
+            keyboard_mouse_choice1="Keyboard and Mouse Combo"
+        elif keyboard_mouse_combo.lower()=='no':
+            print("No keyboard and mouse combo added to your cart.")
+        desktop_accessories_request=input("would you like to add accessories in your desktop? (yes/no): ").lower()
+        if desktop_accessories_request.lower()=='yes':
+            desktop_accessories_menu=input("would you like to see the accessories available? (yes/no): ").lower()
+            if desktop_accessories_menu.lower()=='yes':
+                print("=============================================================")
+                print("Here are the available accessories for your desktop:")
+                print("=============================================================")
+                print("accessories available:")
+                print("1.Speakers","price: Rs.2000")
+                print("2.Webcam","price: Rs.2500")
+                print("3.Printer","price: Rs.3000")
+                desktop_accessories=input("Enter the accessories you want (Speakers, Webcam, Printer, Enter all if all accessories needed): ").lower()
+                if "all" in desktop_accessories or "everything" in desktop_accessories:
+                    print("Your selected accessories are added to cart")
+                    desktop_cost += 2000 + 2500 + 3000
+                    print("total desktop cost after adding accessories is Rs.",desktop_cost)
+                else:
+                    if "speakers" in desktop_accessories:
+                         print("Added speakers to your cart.")
+                         desktop_cost += 2000
+                         print("total desktop cost after adding accessories is Rs.",desktop_cost)
+                    if "webcam" in desktop_accessories:
+                        print("Added webcam to your cart.")
+                        desktop_cost += 2500
+                        print("total desktop cost after adding accessories is Rs.",desktop_cost)
+                    if "printer" in desktop_accessories:
+                        print("Added printer to your cart.")
+                        desktop_cost += 3000
+                        print("total desktop cost after adding accessories is Rs.",desktop_cost)
+            elif desktop_accessories_menu.lower()=='no':
+                print("Proceeding without showing accessories menu.")
+                desktop_accessories=input("Enter the accessories you want (Speakers, Webcam, Printer, Enter all if all accessories needed): ").lower()
+                if "all" in desktop_accessories or "everything" in desktop_accessories:
+                    print("Your selected accessories are added to cart")
+                    desktop_cost += 2000 + 2500 + 3000
+                    print("total desktop cost after adding accessories is Rs.",desktop_cost)
+                else:
+                    if "speakers" in desktop_accessories:
+                         print("Added speakers to your cart.")
+                         desktop_cost += 2000
+                         print("total desktop cost after adding accessories is Rs.",desktop_cost)
+                    if "webcam" in desktop_accessories:
+                        print("Added webcam to your cart.")
+                        desktop_cost += 2500
+                        print("total desktop cost after adding accessories is Rs.",desktop_cost)
+                    if "printer" in desktop_accessories:
+                        print("Added printer to your cart.")
+                        desktop_cost += 3000
+                        print("total desktop cost after adding accessories is Rs.",desktop_cost)
+        elif desktop_accessories_request.lower()=='no':
+            print("No accessories added to your cart.")
+        print("-------------------------------------------------------------")
+        print("You have ordered a Desktop with the following specifications:")
+        print("-------------------------------------------------------------")
+        print("Processor:", desktop_processor)
+        print("RAM:", desktop_ram)
+        print("Storage:", desktop_storage)
+        print("Graphics Card:", graphics_name)
+        print("Operating System:", desktop_operating_system)
+        print("Monitor:", monitor_choice1)
+        print("Keyboard and Mouse Combo:", keyboard_mouse_choice1)
+        print("Accessories:",desktop_accessories)
+        print("Total Cost (Rs):", desktop_cost)
+        print("-------------------------------------------------------------")
+        print("Your order quantity is:",order_quantity + 1)
+        reconformation=input("Do you want to confirm your order to be added into cart? (yes/no): ")
+        if reconformation.lower()=='yes':
+            order_quantity=order_quantity + 1
+            print("Your order has been added!")
+            order_summary[order_quantity]={"category":"Desktop", "Processor":desktop_processor, "RAM":desktop_ram, "Storage":desktop_storage, "Graphics":graphics_name, "Operating System":desktop_operating_system, "Monitor":monitor_choice1, "Keyboard and Mouse Combo":keyboard_mouse_choice1, "Accessories":desktop_accessories, "Total Cost (Rs)":desktop_cost}
+            amount_stored.append(desktop_cost)
+            reorder=input("Do you want to place another order? (yes/no): ")
+            if reorder.lower()=='yes':
+                pass
+            else:
+                print("Thank you for visiting Tech Gazer. Have a great day!")
+                break
+        else:
+            print("Your order has been cancelled.")
+            reorder=input("would you like to place a new order?(yes/no): ")
+            if reorder.lower()=='yes':
+                pass
+            else:
+                print("Thank you for visiting Tech Gazer. Have a great day!")
+                break
     elif order == '9':
         print("Exiting the order placement section.")
         print("Thank you for visiting Tech Gazer. Have a great day!")
