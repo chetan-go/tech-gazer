@@ -35,6 +35,7 @@ while True:
     print("6. Tv and accessories")
     print("7. Audio devices and accessories")
     print("8. Gaming consoles and accessories")
+    print("9. Exit")
     phone_cost=15000
     laptop_cost=50000
     desktop_cost=40000
