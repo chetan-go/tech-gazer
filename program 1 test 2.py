@@ -1,13 +1,12 @@
 import shutil
 width = shutil.get_terminal_size().columns
 print_centered =width // 2
-print(' '*print_centered,'Welcome To Tech Gazer!')
 order_summary={}
 order_quantity=0
 amount_stored=[]
-print(' '*print_centered,"================================")
+print(' '*print_centered,"=======================")
 print(' '*print_centered,"Welcome to Tech gazer!")
-print(' '*print_centered,"================================")
+print(' '*print_centered,"=======================")
 print("We offer a wide range of tech products to fulfill to your needs.")
 print("====================================================")
 print("Here are all the products available in our stores:")
