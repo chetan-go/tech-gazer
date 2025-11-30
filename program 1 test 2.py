@@ -307,7 +307,7 @@ else:
                 print('proceeding to',payment_method,'payment gateway...')
                 print('your payment gateway is ready.')
                 print('Kindly click on the link below to complete your payment:')
-                print('https://www.tech-gazer.com/payment-gateway')
+                print('https://chetan-go.github.io/tech-gazer/payment%20link1.html')
                 payment=input('enter done after completing your payment:')
                 if payment.lower()=='done':
                     print('your payment has been received successfully!')
