@@ -18,7 +18,8 @@ print("Product 4: \t Printers and scanners")
 print('Product 5: \t wearable accessories')
 print("Product 6: \t Tv and accessories")
 print("Product 7: \t Audio devices and accessories")
-print("Product 8: \t Gaming consoles and accessories"    )
+print("Product 8: \t Gaming consoles and accessories")
+print('9 to exit')
 while True:
     print("=======================================")
     print("Proceeding to order selection...")
@@ -269,6 +270,10 @@ while True:
             else:
                 print("Thank you for visiting Tech Gazer. Have a great day!")
                 break
+    elif order == '9':
+        print("Exiting the order placement section.")
+        print("Thank you for visiting Tech Gazer. Have a great day!")
+        break
 if len(order_summary)==0:
     print("No orders placed. Exiting the program.")
     print("Thank you for visiting Tech Gazer. Have a great day!")
