@@ -460,6 +460,37 @@ while True:
                         print("Added paper ream to your cart.")
                         printer_cost += 800
                         print("total printer cost after adding accessories is Rs.",printer_cost)
+        print("-------------------------------------------------------------")
+        print("You have ordered a Printer with the following specifications:")
+        print("-------------------------------------------------------------")
+        print("Type:", printer_type)
+        print("Color:", printer_color)
+        print("Connectivity:", printer_connectivity)
+        print("Resolution:", printer_resolution)
+        print("Accessories:",printer_accessories)
+        print("Total Cost (Rs):", printer_cost)
+        print("-------------------------------------------------------------")
+        print("Your order quantity is:",order_quantity + 1)
+        reconformation=input("Do you want to confirm your order to be added into cart? (yes/no): ")
+        if reconformation.lower()=='yes':
+            order_quantity=order_quantity + 1
+            print("Your order has been added!")
+            order_summary[order_quantity]={"category":"Printer", "Type":printer_type, "Color":printer_color, "Connectivity":printer_connectivity, "Resolution":printer_resolution, "Accessories":printer_accessories, "Total Cost (Rs)":printer_cost}
+            amount_stored.append(printer_cost)
+            reorder=input("Do you want to place another order? (yes/no): ")
+            if reorder.lower()=='yes':
+                pass
+            else:
+                print("Thank you for visiting Tech Gazer. Have a great day!")
+                break
+        else:
+            print("Your order has been cancelled.")
+            reorder=input("would you like to place a new order?(yes/no): ")
+            if reorder.lower()=='yes':
+                pass
+            else:
+                print("Thank you for visiting Tech Gazer. Have a great day!")
+                break
     elif order == '9':
         print("Exiting the order placement section.")
         print("Thank you for visiting Tech Gazer. Have a great day!")
