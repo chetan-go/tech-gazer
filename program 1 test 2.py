@@ -463,6 +463,7 @@ while True:
                         print("total printer cost after adding accessories is Rs.",printer_cost)
         elif printer_accessories_request.lower()=='no':
             print("No accessories added to your cart.")
+            printer_accessories='No accessories added'
         print("-------------------------------------------------------------")
         print("You have ordered a Printer with the following specifications:")
         print("-------------------------------------------------------------")
@@ -502,7 +503,25 @@ while True:
         wearable_connectivity=input("Enter the connectivity type you want (Bluetooth, Wi-Fi, Cellular): ")
         wearable_backup_battery=input("Enter the backup battery time you want (1 day, 3 days, 7 days): ")
         wearable_color=input("Enter the color you want (Black, White, Blue, Red, Green): ")
-        wearable_features=input("Enter any special features you want (Heart Rate Monitor, GPS, Sleep Tracking, Music Playback, SPO2 Monitor): ")
+        wearable_features=input("Enter any special features you want (Heart Rate Monitor, GPS, Sleep Tracking, Music Playback, SPO2 Monitor, enter all if all the special features needed): ")
+        if "all" in wearable_features.lower() or "everything" in wearable_features.lower():
+            wearable_cost += 3000 + 2000 + 1500 + 1000 + 2500
+        else:
+            if "heart rate monitor" in wearable_features.lower():
+                print("Added heart rate monitor feature.")
+                wearable_cost += 3000
+            if "gps" in wearable_features.lower():
+                print("Added GPS feature.")
+                wearable_cost += 2000
+            if "sleep tracking" in wearable_features.lower():
+                print("Added sleep tracking feature.")
+                wearable_cost += 1500
+            if "music playback" in wearable_features.lower():
+                print("Added music playback feature.")
+                wearable_cost += 1000
+            if "spo2 monitor" in wearable_features.lower():
+                print("Added SPO2 monitor feature.")
+                wearable_cost += 2500
         wearable_accessories_request=input("would you like to add accessories in your wearable? (yes/no): ").lower()
         if wearable_accessories_request.lower()=='yes':
             wearable_accessories_menu=input("would you like to see the accessories available? (yes/no): ").lower()
