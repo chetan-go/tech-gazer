@@ -40,6 +40,7 @@ while True:
     laptop_cost=50000
     desktop_cost=40000
     printer_cost=5000
+    wearable_cost=8000
     graphics_name = "Not specified"
     order = input("Enter the product number you wish to order (1-9): ")
     if order == '1':
@@ -498,7 +499,101 @@ while True:
         print("You have selected Wearable accessories.")
         print("=======================================")
         wearable_type=input("Enter the type of wearable accessory you want (Smartwatch, Fitness Tracker, Smart Glasses): ")
-        
+        wearable_connectivity=input("Enter the connectivity type you want (Bluetooth, Wi-Fi, Cellular): ")
+        wearable_backup_battery=input("Enter the backup battery time you want (1 day, 3 days, 7 days): ")
+        wearable_color=input("Enter the color you want (Black, White, Blue, Red, Green): ")
+        wearable_features=input("Enter any special features you want (Heart Rate Monitor, GPS, Sleep Tracking, Music Playback, SPO2 Monitor): ")
+        wearable_accessories_request=input("would you like to add accessories in your wearable? (yes/no): ").lower()
+        if wearable_accessories_request.lower()=='yes':
+            wearable_accessories_menu=input("would you like to see the accessories available? (yes/no): ").lower()
+            if wearable_accessories_menu.lower()=='yes':
+                print("=============================================================")
+                print("Here are the available accessories for your wearable:")
+                print("=============================================================")
+                print("accessories available:")
+                print("1.Charging Dock","price: Rs.2000")
+                print("2.Extra Straps","price: Rs.1000")
+                print("3.Ear buds","price: Rs.1500")
+                print("4.Screen Protector","price: Rs.500")
+                wearable_accessories=input("Enter the accessories you want (Charging Dock, Extra Straps, Earbuds, Screen Protector, Enter all if all accessories needed): ").lower()
+                if "all" in wearable_accessories or "everything" in wearable_accessories:
+                    print("Your selected accessories are added to cart")
+                    wearable_cost += 2000 + 1000 + 1500 + 500
+                    print("total wearable cost after adding accessories is Rs.",wearable_cost)
+                else:
+                    if "charging dock" in wearable_accessories:
+                         print("Added charging dock to your cart.")
+                         wearable_cost += 2000
+                         print("total wearable cost after adding accessories is Rs.",wearable_cost)
+                    if "extra straps" in wearable_accessories:
+                        print("Added extra straps to your cart.")
+                        wearable_cost += 1000
+                        print("total wearable cost after adding accessories is Rs.",wearable_cost)
+                    if "ear buds" in wearable_accessories:
+                        print("Added ear buds to your cart.")
+                        wearable_cost += 1500
+                        print("total wearable cost after adding accessories is Rs.",wearable_cost)
+                    if "screen protector" in wearable_accessories:
+                        print("Added screen protector to your cart.")
+                        wearable_cost += 500
+                        print("total wearable cost after adding accessories is Rs.",wearable_cost)
+            elif wearable_accessories_menu.lower()=='no':
+                print("Proceeding without showing accessories menu.")
+                wearable_accessories=input("Enter the accessories you want (Charging Dock, Extra Straps, Earbuds, Screen Protector, Enter all if all accessories needed): ").lower()
+                if "all" in wearable_accessories or "everything" in wearable_accessories:
+                    print("Your selected accessories are added to cart")
+                    wearable_cost += 2000 + 1000 + 1500 + 500
+                    print("total wearable cost after adding accessories is Rs.",wearable_cost)
+                else:
+                    if "charging dock" in wearable_accessories:
+                         print("Added charging dock to your cart.")
+                         wearable_cost += 2000
+                         print("total wearable cost after adding accessories is Rs.",wearable_cost)
+                    if "extra straps" in wearable_accessories:
+                        print("Added extra straps to your cart.")
+                        wearable_cost += 1000
+                        print("total wearable cost after adding accessories is Rs.",wearable_cost)
+                    if "ear buds" in wearable_accessories:
+                        print("Added ear buds to your cart.")
+                        wearable_cost += 1500
+                        print("total wearable cost after adding accessories is Rs.",wearable_cost)
+                    if "screen protector" in wearable_accessories:
+                        print("Added screen protector to your cart.")
+                        wearable_cost += 500
+                        print("total wearable cost after adding accessories is Rs.",wearable_cost)
+        elif wearable_accessories_request.lower()=='no':
+            print("No accessories added to your cart.")
+        print("-----------------------------------------------------------------------")
+        print("You have ordered a Wearable accessory with the following specifications:")
+        print("-----------------------------------------------------------------------")
+        print("Type:", wearable_type)
+        print("Connectivity:", wearable_connectivity)
+        print("Backup Battery Time:", wearable_backup_battery)
+        print("Color:", wearable_color)
+        print("Special Features:", wearable_features)
+        print("Total Cost (Rs):", wearable_cost)
+        print("-----------------------------------------------------------------------")
+        print("Your order quantity is:",order_quantity + 1)
+        reconformation=input("Do you want to confirm your order to be added into cart? (yes/no): ")
+        if reconformation.lower()=='yes':
+            order_quantity=order_quantity + 1
+            print("Your order has been added!")
+            order_summary[order_quantity]={"category":"Wearable", "Type":wearable_type, "Connectivity":wearable_connectivity, "Backup Battery Time":wearable_backup_battery, "Color":wearable_color, "Special Features":wearable_features, "Accessories":wearable_accessories, "Total Cost (Rs)":wearable_cost}
+            amount_stored.append(wearable_cost)
+            reorder=input("Do you want to place another order? (yes/no): ")
+            if reorder.lower()=='yes':
+                pass
+            else:
+                print("Thank you for visiting Tech Gazer. Have a great day!")
+                break
+        else:
+            print("Your order has been cancelled.")
+            reorder=input("would you like to place a new order?(yes/no): ")
+            if reorder.lower()=='yes':
+                pass
+            else:
+                print("Thank you for visiting Tech Gazer. Have a great day!")
+                break
     elif order == '9':
         print("Exiting the order placement section.")
         print("Thank you for visiting Tech Gazer. Have a great day!")
