@@ -463,6 +463,7 @@ while True:
                         print("total printer cost after adding accessories is Rs.",printer_cost)
         elif printer_accessories_request.lower()=='no':
             print("No accessories added to your cart.")
+            printer_accessories='No accessories added'
         print("-------------------------------------------------------------")
         print("You have ordered a Printer with the following specifications:")
         print("-------------------------------------------------------------")
@@ -502,7 +503,25 @@ while True:
         wearable_connectivity=input("Enter the connectivity type you want (Bluetooth, Wi-Fi, Cellular): ")
         wearable_backup_battery=input("Enter the backup battery time you want (1 day, 3 days, 7 days): ")
         wearable_color=input("Enter the color you want (Black, White, Blue, Red, Green): ")
-        wearable_features=input("Enter any special features you want (Heart Rate Monitor, GPS, Sleep Tracking, Music Playback, SPO2 Monitor): ")
+        wearable_features=input("Enter any special features you want (Heart Rate Monitor, GPS, Sleep Tracking, Music Playback, SPO2 Monitor, enter all if all the special features needed): ")
+        if "all" in wearable_features.lower() or "everything" in wearable_features.lower():
+            wearable_cost += 3000 + 2000 + 1500 + 1000 + 2500
+        else:
+            if "heart rate monitor" in wearable_features.lower():
+                print("Added heart rate monitor feature.")
+                wearable_cost += 3000
+            if "gps" in wearable_features.lower():
+                print("Added GPS feature.")
+                wearable_cost += 2000
+            if "sleep tracking" in wearable_features.lower():
+                print("Added sleep tracking feature.")
+                wearable_cost += 1500
+            if "music playback" in wearable_features.lower():
+                print("Added music playback feature.")
+                wearable_cost += 1000
+            if "spo2 monitor" in wearable_features.lower():
+                print("Added SPO2 monitor feature.")
+                wearable_cost += 2500
         wearable_accessories_request=input("would you like to add accessories in your wearable? (yes/no): ").lower()
         if wearable_accessories_request.lower()=='yes':
             wearable_accessories_menu=input("would you like to see the accessories available? (yes/no): ").lower()
@@ -594,136 +613,6 @@ while True:
             else:
                 print("Thank you for visiting Tech Gazer. Have a great day!")
                 break
-    elif order == '6':
-        print("=====================================")
-        print("You have selected Tv and accessories.")
-        print("=====================================")
-        tv_size=input("Enter the TV size you want (32 inch, 40 inch, 50 inch, 60 inch, 70 inch): ")
-        tv_resolution=input("Enter the resolution you want (HD, Full HD, 4K, 8K): ")
-        tv_display_type=input("Enter the display type you want (LED, OLED, QLED, 4K UHD, Smart): ")
-        tv_special_features=input("Enter any special features you want (HDR, Voice Control, Screen Mirroring, Built-in Apps): ")
-        tv_smart_features=input("Enter any smart features you want(Google TV, Android TV, Fire TV, Roku): ")
-        tv_sound_output_preference=input("Enter any sound preference you want (Standard, Surround Sound, Dolby Atmos): ")
-        tv_connectivity=input("Enter the connectivity type you want (HDMI, USB, Wi-Fi, Bluetooth): ")
-        tv_accesories_request=input("would you like to add accessories in your TV? (yes/no): ").lower()
-        if tv_accesories_request.lower()=='yes':
-            tv_accesories_menu=input("would you like to see the accessories available? (yes/no): ").lower()
-            if tv_accesories_menu.lower()=='yes':
-                print("=============================================================")
-                print("Here are the available accessories for your TV:")
-                print("=============================================================")
-                print("accessories available:")
-                print("1.Wall Mount","price: Rs.2000")
-                print("2.Soundbar","price: Rs.5000")
-                print("3.Remote Control","price: Rs.1500")
-                print("4.TV Stand","price: Rs.3000")
-                print("5.Extra HDMI Cable","price: Rs.800")
-                print("6.Surge Protector","price: Rs.1200")
-                print("7.Stabilizer","price: Rs.2500")
-                tv_accessories=input("Enter the accessories you want (Wall Mount, Soundbar, Remote Control, TV Stand, Extra HDMI Cable, Surge Protector, Stabilizer, Enter all if all accessories needed): ").lower()
-                if "all" in tv_accessories or "everything" in tv_accessories:
-                    print("Your selected accessories are added to cart")
-                    tv_cost += 2000 + 5000 + 1500 + 3000 + 800 + 1200 + 2500    
-                else:
-                    if "wall mount" in tv_accessories:
-                         print("Added wall mount to your cart.")
-                         tv_cost += 2000
-                         print("total TV cost after adding accessories is Rs.",tv_cost)
-                    if "soundbar" in tv_accessories:
-                        print("Added soundbar to your cart.")
-                        tv_cost += 5000
-                        print("total TV cost after adding accessories is Rs.",tv_cost)
-                    if "remote control" in tv_accessories:
-                        print("Added remote control to your cart.")
-                        tv_cost += 1500
-                        print("total TV cost after adding accessories is Rs.",tv_cost)
-                    if "tv stand" in tv_accessories:
-                        print("Added TV stand to your cart.")
-                        tv_cost += 3000
-                        print("total TV cost after adding accessories is Rs.",tv_cost)
-                    if "extra hdmi cable" in tv_accessories:
-                        print("Added extra HDMI cable to your cart.")
-                        tv_cost += 800
-                        print("total TV cost after adding accessories is Rs.",tv_cost)
-                    if "surge protector" in tv_accessories:
-                        print("Added surge protector to your cart.")
-                        tv_cost += 1200
-                        print("total TV cost after adding accessories is Rs.",tv_cost)
-                    if "stabilizer" in tv_accessories:
-                        print("Added stabilizer to your cart.")
-                        tv_cost += 2500
-                        print("total TV cost after adding accessories is Rs.",tv_cost)
-            elif tv_accesories_menu.lower()=='no':
-                print("Proceeding without showing accessories menu.")
-                tv_accessories=input("Enter the accessories you want (Wall Mount, Soundbar, Remote Control, TV Stand, Extra HDMI Cable, Surge Protector, Stabilizer, Enter all if all accessories needed): ").lower()
-                if "all" in tv_accessories or "everything" in tv_accessories:
-                    print("Your selected accessories are added to cart")
-                    tv_cost += 2000 + 5000 + 1500 + 3000 + 800 + 1200 + 2500    
-                else:
-                    if "wall mount" in tv_accessories:
-                         print("Added wall mount to your cart.")
-                         tv_cost += 2000
-                         print("total TV cost after adding accessories is Rs.",tv_cost)
-                    if "soundbar" in tv_accessories:
-                        print("Added soundbar to your cart.")
-                        tv_cost += 5000
-                        print("total TV cost after adding accessories is Rs.",tv_cost)
-                    if "remote control" in tv_accessories:
-                        print("Added remote control to your cart.")
-                        tv_cost += 1500
-                        print("total TV cost after adding accessories is Rs.",tv_cost)
-                    if "tv stand" in tv_accessories:
-                        print("Added TV stand to your cart.")
-                        tv_cost += 3000
-                        print("total TV cost after adding accessories is Rs.",tv_cost)
-                    if "extra hdmi cable" in tv_accessories:
-                        print("Added extra HDMI cable to your cart.")
-                        tv_cost += 800
-                        print("total TV cost after adding accessories is Rs.",tv_cost)
-                    if "surge protector" in tv_accessories:
-                        print("Added surge protector to your cart.")
-                        tv_cost += 1200
-                        print("total TV cost after adding accessories is Rs.",tv_cost)
-                    if "stabilizer" in tv_accessories:
-                        print("Added stabilizer to your cart.")
-                        tv_cost += 2500
-                        print("total TV cost after adding accessories is Rs.",tv_cost)
-        elif tv_accesories_request.lower()=='no':
-            print("No accessories added to your cart.")
-        print("-------------------------------------------------------------")
-        print("You have ordered a TV with the following specifications:")
-        print("-------------------------------------------------------------")
-        print("Size:", tv_size)
-        print("Resolution:", tv_resolution) 
-        print("Display Type:", tv_display_type)
-        print("Special Features:", tv_special_features)
-        print("Smart Features:", tv_smart_features)
-        print("Sound Output Preference:", tv_sound_output_preference)
-        print("Connectivity:", tv_connectivity)
-        print("Accessories:",tv_accessories)
-        print("Total Cost (Rs):", tv_cost)
-        print("-------------------------------------------------------------")
-        print("Your order quantity is:",order_quantity + 1)
-        reconformation=input("Do you want to confirm your order to be added into cart? (yes/no): ")
-        if reconformation.lower()=='yes':  
-            order_quantity=order_quantity + 1
-            print("Your order has been added!")
-            order_summary[order_quantity]={"category":"TV", "Size":tv_size, "Resolution":tv_resolution, "Display Type":tv_display_type, "Special Features":tv_special_features, "Smart Features":tv_smart_features, "Sound Output Preference":tv_sound_output_preference, "Connectivity":tv_connectivity, "Accessories":tv_accessories, "Total Cost (Rs)":tv_cost}
-            amount_stored.append(tv_cost)
-            reorder=input("Do you want to place another order? (yes/no): ")
-            if reorder.lower()=='yes':
-                pass
-            else:
-                print("Thank you for visiting Tech Gazer. Have a great day!")
-                break
-        else:
-            print("Your order has been cancelled.")
-            reorder=input("would you like to place a new order?(yes/no): ")
-            if reorder.lower()=='yes':
-                pass
-            else:
-                print("Thank you for visiting Tech Gazer. Have a great day!")
-                break   
     elif order == '9':
         print("Exiting the order placement section.")
         print("Thank you for visiting Tech Gazer. Have a great day!")
