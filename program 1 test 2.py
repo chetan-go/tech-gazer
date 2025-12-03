@@ -42,7 +42,7 @@ while True:
     printer_cost=5000
     wearable_cost=8000
     tv_cost=10000
-    audio_devices_cost=7000
+    audio_device_cost=7000
     gaming_console_cost=15000
     graphics_name = "Not specified"
     order = input("Enter the product number you wish to order (1-9): ")
@@ -774,7 +774,7 @@ while True:
         audio_device_color=input("Enter the color you want (Black, White, Blue, Red, Green): ")
         audio_device_special_features=input("Enter any special features you want (Noise Cancellation, Waterproof, Voice Assistant, Surround Sound, Long Battery Life, enter all if all the special features needed): ")
         if "all" in audio_device_special_features.lower() or "everything" in audio_device_special_features.lower():
-            audio_device_cost += 3000 + 2000 + 1500 + 2500 + 1800
+            audio_device_cost+= 3000 + 2000 + 1500 + 2500 + 1800
         else:
             if "noise cancellation" in audio_device_special_features.lower():
                 print("Added noise cancellation feature.")
