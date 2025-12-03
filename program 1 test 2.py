@@ -582,6 +582,7 @@ while True:
                         print("total wearable cost after adding accessories is Rs.",wearable_cost)
         elif wearable_accessories_request.lower()=='no':
             print("No accessories added to your cart.")
+            wearable_accessories='No accessories added'
         print("-----------------------------------------------------------------------")
         print("You have ordered a Wearable accessory with the following specifications:")
         print("-----------------------------------------------------------------------")
@@ -724,6 +725,7 @@ while True:
                         print("total TV cost after adding accessories is Rs.",tv_cost)
         elif tv_accesories_request.lower()=='no':
             print("No accessories added to your cart.")
+            tv_accessories='No accessories added'
         print("-------------------------------------------------------------")
         print("You have ordered a TV with the following specifications:")
         print("-------------------------------------------------------------")
@@ -758,6 +760,123 @@ while True:
             else:
                 print("Thank you for visiting Tech Gazer. Have a great day!")
                 break 
+    elif order == '7':
+        print("===============================================")
+        print("You have selected Audio devices and accessories.")
+        print("===============================================")
+        audio_device_type=input("Enter the type of audio device you want (Headphones, Speakers, Soundbars, Earbuds): ")
+        audio_device_connectivity=input("Enter the connectivity type you want (Wired, Wireless, Bluetooth, Wi-Fi): ")
+        audio_device_color=input("Enter the color you want (Black, White, Blue, Red, Green): ")
+        audio_device_special_features=input("Enter any special features you want (Noise Cancellation, Waterproof, Voice Assistant, Surround Sound, Long Battery Life, enter all if all the special features needed): ")
+        if "all" in audio_device_special_features.lower() or "everything" in audio_device_special_features.lower():
+            audio_device_cost += 3000 + 2000 + 1500 + 2500 + 1800
+        else:
+            if "noise cancellation" in audio_device_special_features.lower():
+                print("Added noise cancellation feature.")
+                audio_device_cost += 3000
+            if "waterproof" in audio_device_special_features.lower():
+                print("Added waterproof feature.")
+                audio_device_cost += 2000
+            if "voice assistant" in audio_device_special_features.lower():
+                print("Added voice assistant feature.")
+                audio_device_cost += 1500
+            if "surround sound" in audio_device_special_features.lower():
+                print("Added surround sound feature.")
+                audio_device_cost += 2500
+            if "long battery life" in audio_device_special_features.lower():
+                print("Added long battery life feature.")
+                audio_device_cost += 1800
+        audio_device_accessories_request=input("would you like to add accessories in your audio device? (yes/no): ").lower()
+        if audio_device_accessories_request.lower()=='yes':
+            audio_device_accessories_menu=input("would you like to see the accessories available? (yes/no): ").lower()
+            if audio_device_accessories_menu.lower()=='yes':
+                print("=============================================================")
+                print("Here are the available accessories for your audio device:")
+                print("=============================================================")
+                print("accessories available:")
+                print("1.Carrying Case","price: Rs.1000")
+                print("2.Extra Ear Tips","price: Rs.500")
+                print("3.Charging Cable","price: Rs.800")
+                print("4.Wireless Adapter","price: Rs.1500")
+                audio_device_accessories=input("Enter the accessories you want (Carrying Case, Extra Ear Tips, Charging Cable, Wireless Adapter, Enter all if all accessories needed): ").lower()
+                if "all" in audio_device_accessories or "everything" in audio_device_accessories:
+                    print("Your selected accessories are added to cart")
+                    audio_device_cost += 1000 + 500 + 800 + 1500
+                    print("total audio device cost after adding accessories is Rs.",audio_device_cost)
+                else:
+                    if "carrying case" in audio_device_accessories:
+                         print("Added carrying case to your cart.")
+                         audio_device_cost += 1000
+                         print("total audio device cost after adding accessories is Rs.",audio_device_cost)
+                    if "extra ear tips" in audio_device_accessories:
+                        print("Added extra ear tips to your cart.")
+                        audio_device_cost += 500
+                        print("total audio device cost after adding accessories is Rs.",audio_device_cost)
+                    if "charging cable" in audio_device_accessories:
+                        print("Added charging cable to your cart.")
+                        audio_device_cost += 800
+                        print("total audio device cost after adding accessories is Rs.",audio_device_cost)
+                    if "wireless adapter" in audio_device_accessories:
+                        print("Added wireless adapter to your cart.")
+                        audio_device_cost += 1500
+                        print("total audio device cost after adding accessories is Rs.",audio_device_cost)
+            elif audio_device_accessories_menu.lower()=='no':
+                print("Proceeding without showing accessories menu.")
+                audio_device_accessories=input("Enter the accessories you want (Carrying Case, Extra Ear Tips, Charging Cable, Wireless Adapter, Enter all if all accessories needed): ").lower()
+                if "all" in audio_device_accessories or "everything" in audio_device_accessories:
+                    print("Your selected accessories are added to cart")
+                    audio_device_cost += 1000 + 500 + 800 + 1500
+                    print("total audio device cost after adding accessories is Rs.",audio_device_cost)
+                else:
+                    if "carrying case" in audio_device_accessories:
+                         print("Added carrying case to your cart.")
+                         audio_device_cost += 1000
+                         print("total audio device cost after adding accessories is Rs.",audio_device_cost)
+                    if "extra ear tips" in audio_device_accessories:
+                        print("Added extra ear tips to your cart.")
+                        audio_device_cost += 500
+                        print("total audio device cost after adding accessories is Rs.",audio_device_cost)
+                    if "charging cable" in audio_device_accessories:
+                        print("Added charging cable to your cart.")
+                        audio_device_cost += 800
+                        print("total audio device cost after adding accessories is Rs.",audio_device_cost)
+                    if "wireless adapter" in audio_device_accessories:
+                        print("Added wireless adapter to your cart.")
+                        audio_device_cost += 1500
+                        print("total audio device cost after adding accessories is Rs.",audio_device_cost)
+        elif audio_device_accessories_request.lower()=='no':
+            print("No accessories added to your cart.")
+            audio_device_accessories='No accessories added'
+        print("-----------------------------------------------------------------------")
+        print("You have ordered an Audio Device with the following specifications:")
+        print("-----------------------------------------------------------------------")
+        print("Type:", audio_device_type)
+        print("Connectivity:", audio_device_connectivity)
+        print("Color:", audio_device_color)
+        print("Special Features:", audio_device_special_features)
+        print("Total Cost (Rs):", audio_device_cost)
+        print("-----------------------------------------------------------------------")
+        print("Your order quantity is:",order_quantity + 1)
+        reconformation=input("Do you want to confirm your order to be added into cart? (yes/no): ")
+        if reconformation.lower()=='yes':
+            order_quantity=order_quantity + 1
+            print("Your order has been added!")
+            order_summary[order_quantity]={"category":"Audio Device", "Type":audio_device_type, "Connectivity":audio_device_connectivity, "Color":audio_device_color, "Special Features":audio_device_special_features, "Accessories":audio_device_accessories, "Total Cost (Rs)":audio_device_cost}
+            amount_stored.append(audio_device_cost)
+            reorder=input("Do you want to place another order? (yes/no): ")
+            if reorder.lower()=='yes':
+                pass
+            else:
+                print("Thank you for visiting Tech Gazer. Have a great day!")
+                break
+        else:
+            print("Your order has been cancelled.")
+            reorder=input("would you like to place a new order?(yes/no): ")
+            if reorder.lower()=='yes':
+                pass
+            else:
+                print("Thank you for visiting Tech Gazer. Have a great day!")
+                break   
     elif order == '8':
         gaming_console_cost=15000
         print("=====================================")
