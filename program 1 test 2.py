@@ -1085,5 +1085,5 @@ else:
                 for spec in specification_list:
                     specs_format='{:<{S_no_width}}  {:<{item_width}}  {:<{specification_width}}  {:>{cost_width}}'.format(" ", " ", spec+':'+specification_list[spec], " ", S_no_width=S_no_width, item_width=item_width, specification_width=specification_width, cost_width=cost_width)
                     print(specs_format)                       
-        total_amount_format="{:>{cost__width}}".format("Total Amount (Rs): "+str(total_amount), cost__width=width-len("Total Amount (Rs): "+str(total_amount)))
+        total_amount_format="{:>{cost__width}}".format("Total Amount (Rs): "+str(total_amount), cost__width=width)
         print(total_amount_format)   
