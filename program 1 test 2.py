@@ -1024,40 +1024,40 @@ else:
             elif payment_method.lower()=='cash on delivery':
                 print('You have selected Cash on Delivery. Please keep the exact amount ready at the time of delivery.')
                 print('Thank you for shopping with Tech Gazer. Your order will be delivered within 7 days.')
-                bill=input("Would you like to see your final bill? (yes/no): ")
-        if bill.lower()=='yes':
-            print("================================")
-            print("here is your Final Bill:")
-            print("================================")
-            print()
-            print("="*width)
-            S_no_width=5
-            item_width=20
-            cost_width=30
-            specification_width=width - (S_no_width + item_width + cost_width + 15)
-            header='S_No {:<{S_no_width}} Item {:<{item_width}} Specifications {:<{specification_width}} Cost (Rs) {:>{cost_width}}'.format("", "", "", "", S_no_width=S_no_width, item_width=item_width, specification_width=specification_width, cost_width=cost_width)
-            print(header)
-            print("="*width)
-            total_amount=sum(amount_stored)
-            j=1
-            specification_list={}
-            n=""
-            for i in order_summary:
+            bill=input("Would you like to see your final bill? (yes/no): ")
+            if bill.lower()=='yes':
+                print("================================")
+                print("here is your Final Bill:")
+                print("================================")
+                print()
+                print("="*width)
+                S_no_width=5
+                item_width=20
+                cost_width=30
+                specification_width=width - (S_no_width + item_width + cost_width + 15)
+                header='S_No {:<{S_no_width}} Item {:<{item_width}} Specifications {:<{specification_width}} Cost (Rs) {:>{cost_width}}'.format("", "", "", "", S_no_width=S_no_width, item_width=item_width, specification_width=specification_width, cost_width=cost_width)
+                print(header)
+                print("="*width)
+                total_amount=sum(amount_stored)
+                j=1
                 specification_list={}
-                for k in order_summary[i]:
-                    if k != "category" and k != "Total Cost (Rs)":
-                        specification_list[k]=order_summary[i][k]
-                S_no=str(j)
-                Item=order_summary[i]["category"]        
-                cost=str(order_summary[i]['Total Cost (Rs)'])
-                row_format='{:<{S_no_width}}  {:<{item_width}}  {:<{specification_width}}  {:>{cost_width}}'.format(S_no,Item,'',cost, S_no_width=S_no_width, item_width=item_width, specification_width=specification_width, cost_width=cost_width)
-                print(row_format)
-                j+=1
-                for spec in specification_list:
-                    specs_format='{:<{S_no_width}}  {:<{item_width}}  {:<{specification_width}}  {:>{cost_width}}'.format(" ", " ", spec+':'+specification_list[spec], " ", S_no_width=S_no_width, item_width=item_width, specification_width=specification_width, cost_width=cost_width)
-                    print(specs_format)                       
-            total_amount_format="{:>{cost__width}}".format("Total Amount (Rs): "+str(total_amount), cost__width=width)
-            print(total_amount_format)  
+                n=""
+                for i in order_summary:
+                    specification_list={}
+                    for k in order_summary[i]:
+                        if k != "category" and k != "Total Cost (Rs)":
+                            specification_list[k]=order_summary[i][k]
+                    S_no=str(j)
+                    Item=order_summary[i]["category"]        
+                    cost=str(order_summary[i]['Total Cost (Rs)'])
+                    row_format='{:<{S_no_width}}  {:<{item_width}}  {:<{specification_width}}  {:>{cost_width}}'.format(S_no,Item,'',cost, S_no_width=S_no_width, item_width=item_width, specification_width=specification_width, cost_width=cost_width)
+                    print(row_format)
+                    j+=1
+                    for spec in specification_list:
+                        specs_format='{:<{S_no_width}}  {:<{item_width}}  {:<{specification_width}}  {:>{cost_width}}'.format(" ", " ", spec+':'+specification_list[spec], " ", S_no_width=S_no_width, item_width=item_width, specification_width=specification_width, cost_width=cost_width)
+                        print(specs_format)                       
+                total_amount_format="{:>{cost__width}}".format("Total Amount (Rs): "+str(total_amount), cost__width=width)
+                print(total_amount_format)  
         elif cart.lower()=='no':
             print("Proceeding without showing cart.")
             print("================================")
@@ -1119,4 +1119,10 @@ else:
                         specs_format='{:<{S_no_width}}  {:<{item_width}}  {:<{specification_width}}  {:>{cost_width}}'.format(" ", " ", spec+':'+specification_list[spec], " ", S_no_width=S_no_width, item_width=item_width, specification_width=specification_width, cost_width=cost_width)
                         print(specs_format)                       
             total_amount_format="{:>{cost__width}}".format("Total Amount (Rs): "+str(total_amount), cost__width=width)
-            print(total_amount_format)   
+            print(total_amount_format)
+        else:
+            print("Invalid input. Exiting the program.")
+            print("Thank you for visiting Tech Gazer. Have a great day!")
+    else:
+        print("You have chosen not to place the order at this time.")
+        print("Thank you for visiting Tech Gazer. Have a great day!")   
