@@ -758,7 +758,7 @@ while True:
             else:
                 print("Thank you for visiting Tech Gazer. Have a great day!")
                 break 
-    elif order == '7':
+    elif order == '8':
         gaming_console_cost=15000
         print("=====================================")
         print("You have selected Gaming consoles.")
