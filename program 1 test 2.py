@@ -757,7 +757,95 @@ while True:
                 pass
             else:
                 print("Thank you for visiting Tech Gazer. Have a great day!")
-                break   
+                break 
+    elif order == '7':
+        print("=====================================")
+        print("You have selected Gaming consoles.")
+        print("=====================================")
+        gaming_console_type=input("Enter the type of gaming console you want (PlayStation, Xbox, Nintendo Switch): ")
+        gaming_console_storage=input("Enter the storage size you want (256GB, 512GB, 1TB, 2TB): ")
+        gaming_console_color=input("Enter the color you want (Black, White, Blue, Red): ")
+        gaming_console_accessories_request=input("would you like to add accessories in your gaming console? (yes/no): ").lower()
+        if gaming_console_accessories_request.lower()=='yes':
+            gaming_console_accessories_menu=input("would you like to see the accessories available? (yes/no): ").lower()
+            if gaming_console_accessories_menu.lower()=='yes':
+                print("=============================================================")
+                print("Here are the available accessories for your gaming console:")
+                print("=============================================================")
+                print("accessories available:")
+                print("1.Extra Controller","price: Rs.3000")
+                print("2.Charging Dock","price: Rs.2000")
+                print("3.Headset","price: Rs.2500")
+                gaming_console_accessories=input("Enter the accessories you want (Extra Controller, Charging Dock, Headset, Enter all if all accessories needed): ").lower()
+                if "all" in gaming_console_accessories or "everything" in gaming_console_accessories:
+                    print("Your selected accessories are added to cart")
+                    gaming_console_cost += 3000 + 2000 + 2500
+                    print("total gaming console cost after adding accessories is Rs.",gaming_console_cost)
+                else:
+                    if "extra controller" in gaming_console_accessories:
+                         print("Added extra controller to your cart.")
+                         gaming_console_cost += 3000
+                         print("total gaming console cost after adding accessories is Rs.",gaming_console_cost)
+                    if "charging dock" in gaming_console_accessories:
+                        print("Added charging dock to your cart.")
+                        gaming_console_cost += 2000
+                        print("total gaming console cost after adding accessories is Rs.",gaming_console_cost)
+                    if "headset" in gaming_console_accessories:
+                        print("Added headset to your cart.")
+                        gaming_console_cost += 2500
+                        print("total gaming console cost after adding accessories is Rs.",gaming_console_cost)
+            elif gaming_console_accessories_menu.lower()=='no':
+                print("Proceeding without showing accessories menu.")
+                gaming_console_accessories=input("Enter the accessories you want (Extra Controller, Charging Dock, Headset, Enter all if all accessories needed): ").lower()
+                if "all" in gaming_console_accessories or "everything" in gaming_console_accessories:
+                    print("Your selected accessories are added to cart")
+                    gaming_console_cost += 3000 + 2000 + 2500
+                    print("total gaming console cost after adding accessories is Rs.",gaming_console_cost)
+                else:
+                    if "extra controller" in gaming_console_accessories:
+                         print("Added extra controller to your cart.")
+                         gaming_console_cost += 3000
+                         print("total gaming console cost after adding accessories is Rs.",gaming_console_cost)
+                    if "charging dock" in gaming_console_accessories:
+                        print("Added charging dock to your cart.")
+                        gaming_console_cost += 2000
+                        print("total gaming console cost after adding accessories is Rs.",gaming_console_cost)
+                    if "headset" in gaming_console_accessories:
+                        print("Added headset to your cart.")
+                        gaming_console_cost += 2500
+                        print("total gaming console cost after adding accessories is Rs.",gaming_console_cost)
+        elif gaming_console_accessories_request.lower()=='no':
+            print("No accessories added to your cart.")
+        print("-------------------------------------------------------------")
+        print("You have ordered a Gaming Console with the following specifications:")
+        print("-------------------------------------------------------------")
+        print("Type:", gaming_console_type)
+        print("Storage Size:", gaming_console_storage)
+        print("Color:", gaming_console_color)
+        print("Accessories:",gaming_console_accessories)
+        print("Total Cost (Rs):", gaming_console_cost)
+        print("-------------------------------------------------------------")
+        print("Your order quantity is:",order_quantity + 1)
+        reconformation=input("Do you want to confirm your order to be added into cart? (yes/no): ")
+        if reconformation.lower()=='yes':
+            order_quantity=order_quantity + 1
+            print("Your order has been added!")
+            order_summary[order_quantity]={"category":"Gaming Console", "Type":gaming_console_type, "Storage Size":gaming_console_storage, "Color":gaming_console_color, "Accessories":gaming_console_accessories, "Total Cost (Rs)":gaming_console_cost}
+            amount_stored.append(gaming_console_cost)
+            reorder=input("Do you want to place another order? (yes/no): ")
+            if reorder.lower()=='yes':
+                pass
+            else:
+                print("Thank you for visiting Tech Gazer. Have a great day!")
+                break
+        else:
+            print("Your order has been cancelled.")
+            reorder=input("would you like to place a new order?(yes/no): ")
+            if reorder.lower()=='yes':
+                pass
+            else:
+                print("Thank you for visiting Tech Gazer. Have a great day!")
+                break
     elif order == '9':
         print("Exiting the order placement section.")
         print("Thank you for visiting Tech Gazer. Have a great day!")
