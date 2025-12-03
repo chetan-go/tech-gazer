@@ -759,6 +759,7 @@ while True:
                 print("Thank you for visiting Tech Gazer. Have a great day!")
                 break 
     elif order == '7':
+        gaming_console_cost=15000
         print("=====================================")
         print("You have selected Gaming consoles.")
         print("=====================================")
@@ -935,10 +936,10 @@ else:
             print("================================")
             print()
             print("="*width)
-            S_no_width=4
-            item_width=20
-            cost_width=90
-            specification_width=width - (S_no_width + item_width + cost_width+9)
+            S_no_width=5
+            item_width=35
+            cost_width=15
+            specification_width=25
             header='S_No {:<{S_no_width}}  Item {:<{item_width}}  Specifications {:<{specification_width}}  Cost (Rs) {:>{cost_width}}'.format("", "", "", "", S_no_width=S_no_width, item_width=item_width, specification_width=specification_width, cost_width=cost_width)
             print(header)
             print("="*width)
