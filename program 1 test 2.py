@@ -41,6 +41,9 @@ while True:
     desktop_cost=40000
     printer_cost=5000
     wearable_cost=8000
+    tv_cost=10000
+    audio_devices_cost=7000
+    gaming_console_cost=15000
     graphics_name = "Not specified"
     order = input("Enter the product number you wish to order (1-9): ")
     if order == '1':
@@ -112,7 +115,8 @@ while True:
                         phone_cost += 300
                         print("total phone cost after adding accessories is Rs.",phone_cost)
         elif phone_accessories_request.lower()=='no':
-            phone_accessories='No accessories added'    
+            print("No accessories added to your cart.")
+            phone_accessories='No accessories added' 
         print("-------------------------------------------------------------")
         print("You have ordered a Phone with the following specifications:")
         print('-------------------------------------------------------------')
@@ -239,6 +243,7 @@ while True:
                         print("Added keyboard to your cart.")
                         laptop_cost += 1200
         elif laptop_accessories_request.lower()=='no':
+            print("No accessories added to your cart.")
             laptop_accessories='No accessories added'
         print("-------------------------------------------------------------")
         print("You have ordered a Laptop with the following specifications:")
@@ -379,6 +384,7 @@ while True:
                         print("total desktop cost after adding accessories is Rs.",desktop_cost)
         elif desktop_accessories_request.lower()=='no':
             print("No accessories added to your cart.")
+            desktop_accessories='No accessories added'
         print("-------------------------------------------------------------")
         print("You have ordered a Desktop with the following specifications:")
         print("-------------------------------------------------------------")
@@ -615,7 +621,6 @@ while True:
                 print("Thank you for visiting Tech Gazer. Have a great day!")
                 break
     elif order == '6':
-        tv_cost=10000
         print("=====================================")
         print("You have selected Tv and accessories.")
         print("=====================================")
@@ -878,7 +883,6 @@ while True:
                 print("Thank you for visiting Tech Gazer. Have a great day!")
                 break   
     elif order == '8':
-        gaming_console_cost=15000
         print("=====================================")
         print("You have selected Gaming consoles.")
         print("=====================================")
