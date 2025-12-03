@@ -940,6 +940,7 @@ while True:
                         print("total gaming console cost after adding accessories is Rs.",gaming_console_cost)
         elif gaming_console_accessories_request.lower()=='no':
             print("No accessories added to your cart.")
+            gaming_console_accessories='No accessories added'
         print("-------------------------------------------------------------")
         print("You have ordered a Gaming Console with the following specifications:")
         print("-------------------------------------------------------------")
