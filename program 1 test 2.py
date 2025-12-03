@@ -937,10 +937,10 @@ else:
             print()
             print("="*width)
             S_no_width=5
-            item_width=35
-            cost_width=15
-            specification_width=25
-            header='S_No {:<{S_no_width}}  Item {:<{item_width}}  Specifications {:<{specification_width}}  Cost (Rs) {:>{cost_width}}'.format("", "", "", "", S_no_width=S_no_width, item_width=item_width, specification_width=specification_width, cost_width=cost_width)
+            item_width=20
+            cost_width=30
+            specification_width=width - (S_no_width + item_width + cost_width + 15)
+            header='S_No {:<{S_no_width}} Item {:<{item_width}} Specifications {:<{specification_width}} Cost (Rs) {:>{cost_width}}'.format("", "", "", "", S_no_width=S_no_width, item_width=item_width, specification_width=specification_width, cost_width=cost_width)
             print(header)
             print("="*width)
             total_amount=sum(amount_stored)
@@ -961,5 +961,5 @@ else:
                 for spec in specification_list:
                     specs_format='{:<{S_no_width}}  {:<{item_width}}  {:<{specification_width}}  {:>{cost_width}}'.format(" ", " ", spec+':'+specification_list[spec], " ", S_no_width=S_no_width, item_width=item_width, specification_width=specification_width, cost_width=cost_width)
                     print(specs_format)                       
-            total_amount_format="{:>{cost__width}}".format("Total Amount (Rs): "+str(total_amount), cost__width=cost_width)
-            print(total_amount_format)   
+        total_amount_format="{:>{cost__width}}".format("Total Amount (Rs): "+str(total_amount), cost__width=width-cost_width)
+        print(total_amount_format)   
