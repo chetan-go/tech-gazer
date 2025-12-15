@@ -979,6 +979,7 @@ if len(order_summary)==0:
     print("No orders placed. Exiting the program.")
     print("Thank you for visiting Tech Gazer. Have a great day!")
 else:
+    width=80
     order_placement=input("Would you like to place your order now? (yes/no): ")
     if order_placement.lower()=='yes':
         cart=input("Would you like to see your cart before placing order? (yes/no): ")
@@ -1033,8 +1034,8 @@ else:
                 print("="*width)
                 S_no_width=5
                 item_width=20
-                cost_width=30
-                specification_width=width - (S_no_width + item_width + cost_width + 15)
+                specification_width=40
+                cost_width=width
                 header='S_No {:<{S_no_width}} Item {:<{item_width}} Specifications {:<{specification_width}} Cost (Rs) {:>{cost_width}}'.format("", "", "", "", S_no_width=S_no_width, item_width=item_width, specification_width=specification_width, cost_width=cost_width)
                 print(header)
                 print("="*width)
@@ -1055,9 +1056,12 @@ else:
                     j+=1
                     for spec in specification_list:
                         specs_format='{:<{S_no_width}}  {:<{item_width}}  {:<{specification_width}}  {:>{cost_width}}'.format(" ", " ", spec+':'+specification_list[spec], " ", S_no_width=S_no_width, item_width=item_width, specification_width=specification_width, cost_width=cost_width)
-                        print(specs_format)                       
-                total_amount_format="{:>{cost__width}}".format("Total Amount (Rs): "+str(total_amount), cost__width=width)
-                print(total_amount_format)  
+                        print(specs_format)
+                        print()
+                total_amount_format='{:<{S_no_width}}  {:<{item_width}}  {:<{specification_width}}  {:>{cost_width}}'.format('','','','Total Amount :'+str(total_amount), S_no_width=S_no_width, item_width=item_width, specification_width=specification_width, cost_width=cost_width)
+                print(total_amount_format)
+            elif bill.lower()=='no':
+                print("Thank you for visiting Tech Gazer. Have a great day!")
         elif cart.lower()=='no':
             print("Proceeding without showing cart.")
             print("================================")
@@ -1095,8 +1099,8 @@ else:
                 print("="*width)
                 S_no_width=5
                 item_width=20
-                cost_width=30
-                specification_width=width - (S_no_width + item_width + cost_width + 15)
+                specification_width=40
+                cost_width=width
                 header='S_No {:<{S_no_width}} Item {:<{item_width}} Specifications {:<{specification_width}} Cost (Rs) {:>{cost_width}}'.format("", "", "", "", S_no_width=S_no_width, item_width=item_width, specification_width=specification_width, cost_width=cost_width)
                 print(header)
                 print("="*width)
@@ -1117,11 +1121,11 @@ else:
                     j+=1
                     for spec in specification_list:
                         specs_format='{:<{S_no_width}}  {:<{item_width}}  {:<{specification_width}}  {:>{cost_width}}'.format(" ", " ", spec+':'+specification_list[spec], " ", S_no_width=S_no_width, item_width=item_width, specification_width=specification_width, cost_width=cost_width)
-                        print(specs_format)                       
-            total_amount_format="{:>{cost__width}}".format("Total Amount (Rs): "+str(total_amount), cost__width=width)
+                        print(specs_format)
+                        print()
+            total_amount_format='{:<{S_no_width}}  {:<{item_width}}  {:<{specification_width}}  {:>{cost_width}}'.format('','','','Total Amount :'+str(total_amount), S_no_width=S_no_width, item_width=item_width, specification_width=specification_width, cost_width=cost_width)
             print(total_amount_format)
-        else:
-            print("Invalid input. Exiting the program.")
+        elif bill.lower()=='no':
             print("Thank you for visiting Tech Gazer. Have a great day!")
     else:
         print("You have chosen not to place the order at this time.")
