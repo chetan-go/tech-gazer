@@ -165,57 +165,36 @@ while True:
         print("your total laptop cost is Rs.",laptop_cost)
         laptop_accessories_request=input("would you like to add accessories? (yes/no): ").lower()
         if laptop_accessories_request.lower()=='yes':
-            laptop_accessories_menu=input("would you like to see the accessories available? (yes/no): ").lower()
-            if laptop_accessories_menu.lower()=='yes':
-                print("=============================================================")
-                print("Here are the available accessories for your laptop:")
-                print("=============================================================")
-                print("accessories available:")
-                print("1.Charger","price: Rs.1000")
-                print("2.Laptop Bag","price: Rs.1500")
-                print("3.Mouse","price: Rs.800")
-                print("4.Keyboard","price: Rs.1200")
-                laptop_accessories=input("Enter the accessories you want (Charger, Laptop Bag, Mouse, Keyboard, Enter all if all accessories needed): ").lower()
-                if "all" in laptop_accessories or "everything" in laptop_accessories:
-                    print("Your selected accessories are added to cart")
-                    laptop_cost += 1000 + 1500 + 800 + 1200
+            print("=============================================================")
+            print("Here are the available accessories for your laptop:")
+            print("=============================================================")
+            print("accessories available:")
+            print("1.Charger","price: Rs.1000")
+            print("2.Laptop Bag","price: Rs.1500")
+            print("3.Mouse","price: Rs.800")
+            print("4.Keyboard","price: Rs.1200")
+            laptop_accessories=input("Enter the accessories you want (Charger, Laptop Bag, Mouse, Keyboard, Enter all if all accessories needed): ").lower()
+            if "all" in laptop_accessories or "everything" in laptop_accessories:
+                print("Your selected accessories are added to cart")
+                laptop_cost += 1000 + 1500 + 800 + 1200
+                print("total laptop cost after adding accessories is Rs.",laptop_cost)
+            else:
+                if "charger" in laptop_accessories:
+                    print("Added charger to your cart.")
+                    laptop_cost += 1000
                     print("total laptop cost after adding accessories is Rs.",laptop_cost)
-                else:
-                    if "charger" in laptop_accessories:
-                         print("Added charger to your cart.")
-                         laptop_cost += 1000
-                         print("total laptop cost after adding accessories is Rs.",laptop_cost)
-                    if "laptop bag" in laptop_accessories:
-                        print("Added laptop bag to your cart.")
-                        laptop_cost += 1500
-                        print("total laptop cost after adding accessories is Rs.",laptop_cost)
-                    if "mouse" in laptop_accessories:
-                        print("Added mouse to your cart.")
-                        laptop_cost += 800
-                        print("total laptop cost after adding accessories is Rs.",laptop_cost)
-                    if "keyboard" in laptop_accessories:
-                        print("Added keyboard to your cart.")
-                        laptop_cost += 1200
-                        print("total laptop cost after adding accessories is Rs.",laptop_cost)
-            elif laptop_accessories_menu.lower()=='no':
-                print("Proceeding without showing accessories menu.")
-                laptop_accessories=input("Enter the accessories you want (Charger, Laptop Bag, Mouse, Keyboard, Enter all if all accessories needed): ").lower()
-                if "all" in laptop_accessories or "everything" in laptop_accessories:
-                    print("Your selected accessories are added to cart")
-                    laptop_cost += 1000 + 1500 + 800 + 1200
-                else:
-                    if "charger" in laptop_accessories:
-                         print("Added charger to your cart.")
-                         laptop_cost += 1000
-                    if "laptop bag" in laptop_accessories:
-                        print("Added laptop bag to your cart.")
-                        laptop_cost += 1500
-                    if "mouse" in laptop_accessories:
-                        print("Added mouse to your cart.")
-                        laptop_cost += 800
-                    if "keyboard" in laptop_accessories:
-                        print("Added keyboard to your cart.")
-                        laptop_cost += 1200
+                if "laptop bag" in laptop_accessories:
+                    print("Added laptop bag to your cart.")
+                    laptop_cost += 1500
+                    print("total laptop cost after adding accessories is Rs.",laptop_cost)
+                if "mouse" in laptop_accessories:
+                    print("Added mouse to your cart.")
+                    laptop_cost += 800
+                    print("total laptop cost after adding accessories is Rs.",laptop_cost)
+                if "keyboard" in laptop_accessories:
+                    print("Added keyboard to your cart.")
+                    laptop_cost += 1200
+                    print("total laptop cost after adding accessories is Rs.",laptop_cost)
         elif laptop_accessories_request.lower()=='no':
             print("No accessories added to your cart.")
             laptop_accessories='No accessories added'
