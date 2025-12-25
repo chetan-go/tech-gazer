@@ -58,62 +58,36 @@ while True:
         print('cost of phone is Rs.15000')
         phone_accessories_request=input("would you like to add accessories? (yes/no): ")
         if phone_accessories_request.lower()=='yes':
-            phone_accessories_menu=input("would you like to see the accessories available? (yes/no): ")
-            if phone_accessories_menu.lower()=='yes':
-                print("=============================================================")
-                print("Here are the available accessories for your phone:")
-                print("=============================================================")
-                print("accessories available:")
-                print("1.Charger","price: Rs.500")
-                print("2.Earphones","price: Rs.1000")
-                print("3.Case","price: Rs.700")
-                print("4.Screen Protector","price: Rs.300")
-                phone_accessories=input("Enter the accessories you want (charger, earphones, case, screen protector, Enter all if all accessories needed): ").lower()
-                if "all" in phone_accessories or "everything" in phone_accessories:
-                    print("Your selected accessories are added to cart")
-                    phone_cost += 500 + 1000 + 700 + 300
+            print("=============================================================")
+            print("Here are the available accessories for your phone:")
+            print("=============================================================")
+            print("accessories available:")
+            print("1.Charger","price: Rs.500")
+            print("2.Earphones","price: Rs.1000")
+            print("3.Case","price: Rs.700")
+            print("4.Screen Protector","price: Rs.300")
+            phone_accessories=input("Enter the accessories you want (charger, earphones, case, screen protector, Enter all if all accessories needed): ").lower()
+            if "all" in phone_accessories or "everything" in phone_accessories:
+                print("Your selected accessories are added to cart")
+                phone_cost += 500 + 1000 + 700 + 300
+                print("total phone cost after adding accessories is Rs.",phone_cost)
+            else:
+                if "charger" in phone_accessories:
+                    print("Added charger to your cart.")
+                    phone_cost += 500
                     print("total phone cost after adding accessories is Rs.",phone_cost)
-                else:
-                    if "charger" in phone_accessories:
-                         print("Added charger to your cart.")
-                         phone_cost += 500
-                         print("total phone cost after adding accessories is Rs.",phone_cost)
-                    if "earphones" in phone_accessories:
-                        print("Added earphones to your cart.")
-                        phone_cost += 1000
-                        print("total phone cost after adding accessories is Rs.",phone_cost)
-                    if "case" in phone_accessories:
-                        print("Added case to your cart.")
-                        phone_cost += 700
-                        print("total phone cost after adding accessories is Rs.",phone_cost)
-                    if "screen" in phone_accessories:
-                        print("Added screen protector to your cart.")
-                        phone_cost += 300
-                        print("total phone cost after adding accessories is Rs.",phone_cost)
-            elif phone_accessories_menu.lower()=='no':
-                print("Proceeding without showing accessories menu.")
-                phone_accessories=input("Enter the accessories you want (Charger, Earphones, Case, Screen Protector, Enter all if all accessories needed): ").lower()
-                if "all" in phone_accessories or "everything" in phone_accessories:
-                    print("Your selected accessories are added to cart")
-                    phone_cost += 500 + 1000 + 700 + 300
+                if "earphones" in phone_accessories:
+                    print("Added earphones to your cart.")
+                    phone_cost += 1000
                     print("total phone cost after adding accessories is Rs.",phone_cost)
-                else:
-                    if "charger" in phone_accessories:
-                         print("Added charger to your cart.")
-                         phone_cost += 500
-                         print("total phone cost after adding accessories is Rs.",phone_cost)
-                    if "earphones" in phone_accessories:
-                        print("Added earphones to your cart.")
-                        phone_cost += 1000
-                        print("total phone cost after adding accessories is Rs.",phone_cost)
-                    if "case" in phone_accessories:
-                        print("Added case to your cart.")
-                        phone_cost += 700
-                        print("total phone cost after adding accessories is Rs.",phone_cost)
-                    if "screen" in phone_accessories:
-                        print("Added screen protector to your cart.")
-                        phone_cost += 300
-                        print("total phone cost after adding accessories is Rs.",phone_cost)
+                if "case" in phone_accessories:
+                    print("Added case to your cart.")
+                    phone_cost += 700
+                    print("total phone cost after adding accessories is Rs.",phone_cost)
+                if "screen" in phone_accessories:
+                    print("Added screen protector to your cart.")
+                    phone_cost += 300
+                    print("total phone cost after adding accessories is Rs.",phone_cost)
         elif phone_accessories_request.lower()=='no':
             print("No accessories added to your cart.")
             phone_accessories='No accessories added' 
