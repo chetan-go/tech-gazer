@@ -91,6 +91,9 @@ while True:
         elif phone_accessories_request.lower()=='no':
             print("No accessories added to your cart.")
             phone_accessories='No accessories added' 
+        else:
+            print("Invalid input. No accessories added to your cart.")
+            phone_accessories='No accessories added'
         print("-------------------------------------------------------------")
         print("You have ordered a Phone with the following specifications:")
         print('-------------------------------------------------------------')
@@ -198,6 +201,9 @@ while True:
         elif laptop_accessories_request.lower()=='no':
             print("No accessories added to your cart.")
             laptop_accessories='No accessories added'
+        else:
+            print("Invalid input. No accessories added to your cart.")
+            laptop_accessories='No accessories added'
         print("-------------------------------------------------------------")
         print("You have ordered a Laptop with the following specifications:")
         print("-------------------------------------------------------------")
@@ -288,55 +294,36 @@ while True:
             print("No keyboard and mouse combo added to your cart.")
         desktop_accessories_request=input("would you like to add accessories in your desktop? (yes/no): ").lower()
         if desktop_accessories_request.lower()=='yes':
-            desktop_accessories_menu=input("would you like to see the accessories available? (yes/no): ").lower()
-            if desktop_accessories_menu.lower()=='yes':
-                print("=============================================================")
-                print("Here are the available accessories for your desktop:")
-                print("=============================================================")
-                print("accessories available:")
-                print("1.Speakers","price: Rs.2000")
-                print("2.Webcam","price: Rs.2500")
-                print("3.Printer","price: Rs.3000")
-                desktop_accessories=input("Enter the accessories you want (Speakers, Webcam, Printer, Enter all if all accessories needed): ").lower()
-                if "all" in desktop_accessories or "everything" in desktop_accessories:
-                    print("Your selected accessories are added to cart")
-                    desktop_cost += 2000 + 2500 + 3000
+            print("=============================================================")
+            print("Here are the available accessories for your desktop:")
+            print("=============================================================")
+            print("accessories available:")
+            print("1.Speakers","price: Rs.2000")
+            print("2.Webcam","price: Rs.2500")
+            print("3.Printer","price: Rs.3000")
+            desktop_accessories=input("Enter the accessories you want (Speakers, Webcam, Printer, Enter all if all accessories needed): ").lower()
+            if "all" in desktop_accessories or "everything" in desktop_accessories:
+                print("Your selected accessories are added to cart")
+                desktop_cost += 2000 + 2500 + 3000
+                print("total desktop cost after adding accessories is Rs.",desktop_cost)
+            else:
+                if "speakers" in desktop_accessories:
+                    print("Added speakers to your cart.")
+                    desktop_cost += 2000
                     print("total desktop cost after adding accessories is Rs.",desktop_cost)
-                else:
-                    if "speakers" in desktop_accessories:
-                         print("Added speakers to your cart.")
-                         desktop_cost += 2000
-                         print("total desktop cost after adding accessories is Rs.",desktop_cost)
-                    if "webcam" in desktop_accessories:
-                        print("Added webcam to your cart.")
-                        desktop_cost += 2500
-                        print("total desktop cost after adding accessories is Rs.",desktop_cost)
-                    if "printer" in desktop_accessories:
-                        print("Added printer to your cart.")
-                        desktop_cost += 3000
-                        print("total desktop cost after adding accessories is Rs.",desktop_cost)
-            elif desktop_accessories_menu.lower()=='no':
-                print("Proceeding without showing accessories menu.")
-                desktop_accessories=input("Enter the accessories you want (Speakers, Webcam, Printer, Enter all if all accessories needed): ").lower()
-                if "all" in desktop_accessories or "everything" in desktop_accessories:
-                    print("Your selected accessories are added to cart")
-                    desktop_cost += 2000 + 2500 + 3000
+                if "webcam" in desktop_accessories:
+                    print("Added webcam to your cart.")
+                    desktop_cost += 2500
                     print("total desktop cost after adding accessories is Rs.",desktop_cost)
-                else:
-                    if "speakers" in desktop_accessories:
-                         print("Added speakers to your cart.")
-                         desktop_cost += 2000
-                         print("total desktop cost after adding accessories is Rs.",desktop_cost)
-                    if "webcam" in desktop_accessories:
-                        print("Added webcam to your cart.")
-                        desktop_cost += 2500
-                        print("total desktop cost after adding accessories is Rs.",desktop_cost)
-                    if "printer" in desktop_accessories:
-                        print("Added printer to your cart.")
-                        desktop_cost += 3000
-                        print("total desktop cost after adding accessories is Rs.",desktop_cost)
+                if "printer" in desktop_accessories:
+                    print("Added printer to your cart.")
+                    desktop_cost += 3000
+                    print("total desktop cost after adding accessories is Rs.",desktop_cost)
         elif desktop_accessories_request.lower()=='no':
             print("No accessories added to your cart.")
+            desktop_accessories='No accessories added'
+        else:
+            print("Invalid input. No accessories added to your cart.")
             desktop_accessories='No accessories added'
         print("-------------------------------------------------------------")
         print("You have ordered a Desktop with the following specifications:")
@@ -423,6 +410,9 @@ while True:
         elif printer_accessories_request.lower()=='no':
             print("No accessories added to your cart.")
             printer_accessories='No accessories added'
+        else:
+            print("Invalid input. No accessories added to your cart.")
+            printer_accessories='No accessories added'
         print("-------------------------------------------------------------")
         print("You have ordered a Printer with the following specifications:")
         print("-------------------------------------------------------------")
@@ -483,64 +473,41 @@ while True:
                 wearable_cost += 2500
         wearable_accessories_request=input("would you like to add accessories in your wearable? (yes/no): ").lower()
         if wearable_accessories_request.lower()=='yes':
-            wearable_accessories_menu=input("would you like to see the accessories available? (yes/no): ").lower()
-            if wearable_accessories_menu.lower()=='yes':
-                print("=============================================================")
-                print("Here are the available accessories for your wearable:")
-                print("=============================================================")
-                print("accessories available:")
-                print("1.Charging Dock","price: Rs.2000")
-                print("2.Extra Straps","price: Rs.1000")
-                print("3.Ear buds","price: Rs.1500")
-                print("4.Screen Protector","price: Rs.500")
-                wearable_accessories=input("Enter the accessories you want (Charging Dock, Extra Straps, Earbuds, Screen Protector, Enter all if all accessories needed): ").lower()
-                if "all" in wearable_accessories or "everything" in wearable_accessories:
-                    print("Your selected accessories are added to cart")
-                    wearable_cost += 2000 + 1000 + 1500 + 500
+            print("=============================================================")
+            print("Here are the available accessories for your wearable:")
+            print("=============================================================")
+            print("accessories available:")
+            print("1.Charging Dock","price: Rs.2000")
+            print("2.Extra Straps","price: Rs.1000")
+            print("3.Ear buds","price: Rs.1500")
+            print("4.Screen Protector","price: Rs.500")
+            wearable_accessories=input("Enter the accessories you want (Charging Dock, Extra Straps, Earbuds, Screen Protector, Enter all if all accessories needed): ").lower()
+            if "all" in wearable_accessories or "everything" in wearable_accessories:
+                print("Your selected accessories are added to cart")
+                wearable_cost += 2000 + 1000 + 1500 + 500
+                print("total wearable cost after adding accessories is Rs.",wearable_cost)
+            else:
+                if "charging dock" in wearable_accessories:
+                    print("Added charging dock to your cart.")
+                    wearable_cost += 2000
                     print("total wearable cost after adding accessories is Rs.",wearable_cost)
-                else:
-                    if "charging dock" in wearable_accessories:
-                         print("Added charging dock to your cart.")
-                         wearable_cost += 2000
-                         print("total wearable cost after adding accessories is Rs.",wearable_cost)
-                    if "extra straps" in wearable_accessories:
-                        print("Added extra straps to your cart.")
-                        wearable_cost += 1000
-                        print("total wearable cost after adding accessories is Rs.",wearable_cost)
-                    if "ear buds" in wearable_accessories:
-                        print("Added ear buds to your cart.")
-                        wearable_cost += 1500
-                        print("total wearable cost after adding accessories is Rs.",wearable_cost)
-                    if "screen protector" in wearable_accessories:
-                        print("Added screen protector to your cart.")
-                        wearable_cost += 500
-                        print("total wearable cost after adding accessories is Rs.",wearable_cost)
-            elif wearable_accessories_menu.lower()=='no':
-                print("Proceeding without showing accessories menu.")
-                wearable_accessories=input("Enter the accessories you want (Charging Dock, Extra Straps, Earbuds, Screen Protector, Enter all if all accessories needed): ").lower()
-                if "all" in wearable_accessories or "everything" in wearable_accessories:
-                    print("Your selected accessories are added to cart")
-                    wearable_cost += 2000 + 1000 + 1500 + 500
+                if "extra straps" in wearable_accessories:
+                    print("Added extra straps to your cart.")
+                    wearable_cost += 1000
                     print("total wearable cost after adding accessories is Rs.",wearable_cost)
-                else:
-                    if "charging dock" in wearable_accessories:
-                         print("Added charging dock to your cart.")
-                         wearable_cost += 2000
-                         print("total wearable cost after adding accessories is Rs.",wearable_cost)
-                    if "extra straps" in wearable_accessories:
-                        print("Added extra straps to your cart.")
-                        wearable_cost += 1000
-                        print("total wearable cost after adding accessories is Rs.",wearable_cost)
-                    if "ear buds" in wearable_accessories:
-                        print("Added ear buds to your cart.")
-                        wearable_cost += 1500
-                        print("total wearable cost after adding accessories is Rs.",wearable_cost)
-                    if "screen protector" in wearable_accessories:
-                        print("Added screen protector to your cart.")
-                        wearable_cost += 500
-                        print("total wearable cost after adding accessories is Rs.",wearable_cost)
+                if "ear buds" in wearable_accessories:
+                    print("Added ear buds to your cart.")
+                    wearable_cost += 1500
+                    print("total wearable cost after adding accessories is Rs.",wearable_cost)
+                if "screen protector" in wearable_accessories:
+                    print("Added screen protector to your cart.")
+                    wearable_cost += 500
+                    print("total wearable cost after adding accessories is Rs.",wearable_cost)
         elif wearable_accessories_request.lower()=='no':
             print("No accessories added to your cart.")
+            wearable_accessories='No accessories added'
+        else:
+            print("Invalid input. No accessories added to your cart.")
             wearable_accessories='No accessories added'
         print("-----------------------------------------------------------------------")
         print("You have ordered a Wearable accessory with the following specifications:")
@@ -1076,10 +1043,10 @@ else:
                         specs_format='{:<{S_no_width}}  {:<{item_width}}  {:<{specification_width}}  {:>{cost_width}}'.format(" ", " ", spec+':'+specification_list[spec], " ", S_no_width=S_no_width, item_width=item_width, specification_width=specification_width, cost_width=cost_width)
                         print(specs_format)
                         print()
-            total_amount_format='{:<{S_no_width}}  {:<{item_width}}  {:<{specification_width}}  {:>{cost_width}}'.format('','','','Total Amount :'+str(total_amount), S_no_width=S_no_width, item_width=item_width, specification_width=specification_width, cost_width=cost_width)
-            print(total_amount_format)
-        elif bill.lower()=='no':
-            print("Thank you for visiting Tech Gazer. Have a great day!")
+                total_amount_format='{:<{S_no_width}}  {:<{item_width}}  {:<{specification_width}}  {:>{cost_width}}'.format('','','','Total Amount :'+str(total_amount), S_no_width=S_no_width, item_width=item_width, specification_width=specification_width, cost_width=cost_width)
+                print(total_amount_format)
+            elif bill.lower()=='no':
+                print("Thank you for visiting Tech Gazer. Have a great day!")
     else:
         print("You have chosen not to place the order at this time.")
         print("Thank you for visiting Tech Gazer. Have a great day!")   
