@@ -651,6 +651,9 @@ while True:
         elif tv_accesories_request.lower()=='no':
             print("No accessories added to your cart.")
             tv_accessories='No accessories added'
+        else:
+            print("Invalid input. No accessories added to your cart.")
+            tv_accessories='No accessories added'
         print("-------------------------------------------------------------")
         print("You have ordered a TV with the following specifications:")
         print("-------------------------------------------------------------")
@@ -713,64 +716,41 @@ while True:
                 audio_device_cost += 1800
         audio_device_accessories_request=input("would you like to add accessories in your audio device? (yes/no): ").lower()
         if audio_device_accessories_request.lower()=='yes':
-            audio_device_accessories_menu=input("would you like to see the accessories available? (yes/no): ").lower()
-            if audio_device_accessories_menu.lower()=='yes':
-                print("=============================================================")
-                print("Here are the available accessories for your audio device:")
-                print("=============================================================")
-                print("accessories available:")
-                print("1.Carrying Case","price: Rs.1000")
-                print("2.Extra Ear Tips","price: Rs.500")
-                print("3.Charging Cable","price: Rs.800")
-                print("4.Wireless Adapter","price: Rs.1500")
-                audio_device_accessories=input("Enter the accessories you want (Carrying Case, Extra Ear Tips, Charging Cable, Wireless Adapter, Enter all if all accessories needed): ").lower()
-                if "all" in audio_device_accessories or "everything" in audio_device_accessories:
-                    print("Your selected accessories are added to cart")
-                    audio_device_cost += 1000 + 500 + 800 + 1500
+            print("=============================================================")
+            print("Here are the available accessories for your audio device:")
+            print("=============================================================")
+            print("accessories available:")
+            print("1.Carrying Case","price: Rs.1000")
+            print("2.Extra Ear Tips","price: Rs.500")
+            print("3.Charging Cable","price: Rs.800")
+            print("4.Wireless Adapter","price: Rs.1500")
+            audio_device_accessories=input("Enter the accessories you want (Carrying Case, Extra Ear Tips, Charging Cable, Wireless Adapter, Enter all if all accessories needed): ").lower()
+            if "all" in audio_device_accessories or "everything" in audio_device_accessories:
+                print("Your selected accessories are added to cart")
+                audio_device_cost += 1000 + 500 + 800 + 1500
+                print("total audio device cost after adding accessories is Rs.",audio_device_cost)
+            else:
+                if "carrying case" in audio_device_accessories:
+                    print("Added carrying case to your cart.")
+                    audio_device_cost += 1000
                     print("total audio device cost after adding accessories is Rs.",audio_device_cost)
-                else:
-                    if "carrying case" in audio_device_accessories:
-                         print("Added carrying case to your cart.")
-                         audio_device_cost += 1000
-                         print("total audio device cost after adding accessories is Rs.",audio_device_cost)
-                    if "extra ear tips" in audio_device_accessories:
-                        print("Added extra ear tips to your cart.")
-                        audio_device_cost += 500
-                        print("total audio device cost after adding accessories is Rs.",audio_device_cost)
-                    if "charging cable" in audio_device_accessories:
-                        print("Added charging cable to your cart.")
-                        audio_device_cost += 800
-                        print("total audio device cost after adding accessories is Rs.",audio_device_cost)
-                    if "wireless adapter" in audio_device_accessories:
-                        print("Added wireless adapter to your cart.")
-                        audio_device_cost += 1500
-                        print("total audio device cost after adding accessories is Rs.",audio_device_cost)
-            elif audio_device_accessories_menu.lower()=='no':
-                print("Proceeding without showing accessories menu.")
-                audio_device_accessories=input("Enter the accessories you want (Carrying Case, Extra Ear Tips, Charging Cable, Wireless Adapter, Enter all if all accessories needed): ").lower()
-                if "all" in audio_device_accessories or "everything" in audio_device_accessories:
-                    print("Your selected accessories are added to cart")
-                    audio_device_cost += 1000 + 500 + 800 + 1500
+                if "extra ear tips" in audio_device_accessories:
+                    print("Added extra ear tips to your cart.")
+                    audio_device_cost += 500
                     print("total audio device cost after adding accessories is Rs.",audio_device_cost)
-                else:
-                    if "carrying case" in audio_device_accessories:
-                         print("Added carrying case to your cart.")
-                         audio_device_cost += 1000
-                         print("total audio device cost after adding accessories is Rs.",audio_device_cost)
-                    if "extra ear tips" in audio_device_accessories:
-                        print("Added extra ear tips to your cart.")
-                        audio_device_cost += 500
-                        print("total audio device cost after adding accessories is Rs.",audio_device_cost)
-                    if "charging cable" in audio_device_accessories:
-                        print("Added charging cable to your cart.")
-                        audio_device_cost += 800
-                        print("total audio device cost after adding accessories is Rs.",audio_device_cost)
-                    if "wireless adapter" in audio_device_accessories:
-                        print("Added wireless adapter to your cart.")
-                        audio_device_cost += 1500
-                        print("total audio device cost after adding accessories is Rs.",audio_device_cost)
+                if "charging cable" in audio_device_accessories:
+                    print("Added charging cable to your cart.")
+                    audio_device_cost += 800
+                    print("total audio device cost after adding accessories is Rs.",audio_device_cost)
+                if "wireless adapter" in audio_device_accessories:
+                    print("Added wireless adapter to your cart.")
+                    audio_device_cost += 1500
+                    print("total audio device cost after adding accessories is Rs.",audio_device_cost)
         elif audio_device_accessories_request.lower()=='no':
             print("No accessories added to your cart.")
+            audio_device_accessories='No accessories added'
+        else:
+            print("Invalid input. No accessories added to your cart.")
             audio_device_accessories='No accessories added'
         print("-----------------------------------------------------------------------")
         print("You have ordered an Audio Device with the following specifications:")
@@ -860,6 +840,9 @@ while True:
                         print("total gaming console cost after adding accessories is Rs.",gaming_console_cost)
         elif gaming_console_accessories_request.lower()=='no':
             print("No accessories added to your cart.")
+            gaming_console_accessories='No accessories added'
+        else:
+            print("Invalid input. No accessories added to your cart.")
             gaming_console_accessories='No accessories added'
         print("-------------------------------------------------------------")
         print("You have ordered a Gaming Console with the following specifications:")
