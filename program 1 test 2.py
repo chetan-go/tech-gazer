@@ -111,7 +111,7 @@ while True:
             print("Your order has been added!")
             order_summary[order_quantity]={"category":"Phone", "RAM":phone_ram, "Storage":phone_storage, "Display":phone_display, "Color":phone_color, "SIM":phone_sim, "Accessories":phone_accessories, "Total Cost (Rs)":phone_cost}
             amount_stored.append(phone_cost)
-            reorder=input("Do you want to place another order? (yes/no): ")
+            reorder=input("Do you want to place another item in cart? (yes/no): ")
             if reorder.lower()=='yes':
                 pass
             else:
@@ -223,7 +223,7 @@ while True:
             print("Your order has been added!")
             order_summary[order_quantity]={"category":"Laptop", "Size":laptop_size, "Processor":laptop_processor, "RAM":laptop_ram, "Storage":laptop_storage, "Graphics":graphics_name, "Operating System":laptop_operating_system, "Accessories":laptop_accessories, "Total Cost (Rs)":laptop_cost}
             amount_stored.append(laptop_cost)
-            reorder=input("Do you want to place another order? (yes/no): ")
+            reorder=input("Do you want to place another item in cart? (yes/no): ")
             if reorder.lower()=='yes':
                 pass
             else:
@@ -345,7 +345,7 @@ while True:
             print("Your order has been added!")
             order_summary[order_quantity]={"category":"Desktop", "Processor":desktop_processor, "RAM":desktop_ram, "Storage":desktop_storage, "Graphics":graphics_name, "Operating System":desktop_operating_system, "Monitor":monitor_choice1, "Keyboard and Mouse Combo":keyboard_mouse_choice1, "Accessories":desktop_accessories, "Total Cost (Rs)":desktop_cost}
             amount_stored.append(desktop_cost)
-            reorder=input("Do you want to place another order? (yes/no): ")
+            reorder=input("Do you want to place another item in cart? (yes/no): ")
             if reorder.lower()=='yes':
                 pass
             else:
@@ -412,7 +412,7 @@ while True:
             print("Your order has been added!")
             order_summary[order_quantity]={"category":"Printer", "Type":printer_type, "Color":printer_color, "Connectivity":printer_connectivity, "Resolution":printer_resolution, "Accessories":printer_accessories, "Total Cost (Rs)":printer_cost}
             amount_stored.append(printer_cost)
-            reorder=input("Do you want to place another order? (yes/no): ")
+            reorder=input("Do you want to place another item in cart? (yes/no): ")
             if reorder.lower()=='yes':
                 pass
             else:
@@ -508,7 +508,7 @@ while True:
             print("Your order has been added!")
             order_summary[order_quantity]={"category":"Wearable", "Type":wearable_type, "Connectivity":wearable_connectivity, "Backup Battery Time":wearable_backup_battery, "Color":wearable_color, "Special Features":wearable_features, "Accessories":wearable_accessories, "Total Cost (Rs)":wearable_cost}
             amount_stored.append(wearable_cost)
-            reorder=input("Do you want to place another order? (yes/no): ")
+            reorder=input("Do you want to place another item in cart? (yes/no): ")
             if reorder.lower()=='yes':
                 pass
             else:
@@ -619,7 +619,7 @@ while True:
             print("Your order has been added!")
             order_summary[order_quantity]={"category":"TV", "Size":tv_size, "Resolution":tv_resolution, "Display Type":tv_display_type, "Special Features":tv_special_features, "Smart Features":tv_smart_features, "Sound Output Preference":tv_sound_output_preference, "Connectivity":tv_connectivity, "Accessories":tv_accessories, "Total Cost (Rs)":tv_cost}
             amount_stored.append(tv_cost)
-            reorder=input("Do you want to place another order? (yes/no): ")
+            reorder=input("Do you want to place another item in cart? (yes/no): ")
             if reorder.lower()=='yes':
                 pass
             else:
@@ -713,7 +713,7 @@ while True:
             print("Your order has been added!")
             order_summary[order_quantity]={"category":"Audio Device", "Type":audio_device_type, "Connectivity":audio_device_connectivity, "Color":audio_device_color, "Special Features":audio_device_special_features, "Accessories":audio_device_accessories, "Total Cost (Rs)":audio_device_cost}
             amount_stored.append(audio_device_cost)
-            reorder=input("Do you want to place another order? (yes/no): ")
+            reorder=input("Do you want to place another item in cart? (yes/no): ")
             if reorder.lower()=='yes':
                 pass
             else:
@@ -783,7 +783,7 @@ while True:
             print("Your order has been added!")
             order_summary[order_quantity]={"category":"Gaming Console", "Type":gaming_console_type, "Storage Size":gaming_console_storage, "Color":gaming_console_color, "Accessories":gaming_console_accessories, "Total Cost (Rs)":gaming_console_cost}
             amount_stored.append(gaming_console_cost)
-            reorder=input("Do you want to place another order? (yes/no): ")
+            reorder=input("Do you want to place another item in cart? (yes/no): ")
             if reorder.lower()=='yes':
                 pass
             else:
