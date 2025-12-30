@@ -231,7 +231,7 @@ while True:
                 break
         else:
             print("Your order has been cancelled.")
-            reorder=("would you like to place a new order?(yes/no): ")
+            reorder=input("would you like to place a new order?(yes/no): ")
             if reorder.lower()=='yes':
                 pass
             else:
