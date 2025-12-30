@@ -369,44 +369,26 @@ while True:
         printer_resolution=input("Enter the resolution you want (600x600 dpi, 1200x1200 dpi, 2400x1200 dpi): ")
         printer_accessories_request=input("would you like to add accessories in your printer? (yes/no): ").lower()
         if printer_accessories_request.lower()=='yes':
-            printer_accessories_menu=input("would you like to see the accessories available? (yes/no): ").lower()
-            if printer_accessories_menu.lower()=='yes':
-                print("=============================================================")
-                print("Here are the available accessories for your printer:")
-                print("=============================================================")
-                print("accessories available:")
-                print("1.Extra Ink Cartridges","price: Rs.1500")
-                print("2.Paper Ream","price: Rs.800")
-                printer_accessories=input("Enter the accessories you want (Extra Ink Cartridges, Paper Ream, Enter all if all accessories needed): ").lower()
-                if "all" in printer_accessories or "everything" in printer_accessories:
-                    print("Your selected accessories are added to cart")
-                    printer_cost += 1500 + 800
+            print("=============================================================")
+            print("Here are the available accessories for your printer:")
+            print("=============================================================")
+            print("accessories available:")
+            print("1.Extra Ink Cartridges","price: Rs.1500")
+            print("2.Paper Ream","price: Rs.800")
+            printer_accessories=input("Enter the accessories you want (Extra Ink Cartridges, Paper Ream, Enter all if all accessories needed): ").lower()
+            if "all" in printer_accessories or "everything" in printer_accessories:
+                print("Your selected accessories are added to cart")
+                printer_cost += 1500 + 800
+                print("total printer cost after adding accessories is Rs.",printer_cost)
+            else:
+                if "extra ink cartridges" in printer_accessories:
+                    print("Added extra ink cartridges to your cart.")
+                    printer_cost += 1500
                     print("total printer cost after adding accessories is Rs.",printer_cost)
-                else:
-                    if "extra ink cartridges" in printer_accessories:
-                         print("Added extra ink cartridges to your cart.")
-                         printer_cost += 1500
-                         print("total printer cost after adding accessories is Rs.",printer_cost)
-                    if "paper ream" in printer_accessories:
-                        print("Added paper ream to your cart.")
-                        printer_cost += 800
-                        print("total printer cost after adding accessories is Rs.",printer_cost)
-            elif printer_accessories_menu.lower()=='no':
-                print("Proceeding without showing accessories menu.")
-                printer_accessories=input("Enter the accessories you want (Extra Ink Cartridges, Paper Ream, Enter all if all accessories needed): ").lower()
-                if "all" in printer_accessories or "everything" in printer_accessories:
-                    print("Your selected accessories are added to cart")
-                    printer_cost += 1500 + 800
+                if "paper ream" in printer_accessories:
+                    print("Added paper ream to your cart.")
+                    printer_cost += 800
                     print("total printer cost after adding accessories is Rs.",printer_cost)
-                else:
-                    if "extra ink cartridges" in printer_accessories:
-                         print("Added extra ink cartridges to your cart.")
-                         printer_cost += 1500
-                         print("total printer cost after adding accessories is Rs.",printer_cost)
-                    if "paper ream" in printer_accessories:
-                        print("Added paper ream to your cart.")
-                        printer_cost += 800
-                        print("total printer cost after adding accessories is Rs.",printer_cost)
         elif printer_accessories_request.lower()=='no':
             print("No accessories added to your cart.")
             printer_accessories='No accessories added'
@@ -567,87 +549,50 @@ while True:
         tv_connectivity=input("Enter the connectivity type you want (HDMI, USB, Wi-Fi, Bluetooth): ")
         tv_accesories_request=input("would you like to add accessories in your TV? (yes/no): ").lower()
         if tv_accesories_request.lower()=='yes':
-            tv_accesories_menu=input("would you like to see the accessories available? (yes/no): ").lower()
-            if tv_accesories_menu.lower()=='yes':
-                print("=============================================================")
-                print("Here are the available accessories for your TV:")
-                print("=============================================================")
-                print("accessories available:")
-                print("1.Wall Mount","price: Rs.2000")
-                print("2.Soundbar","price: Rs.5000")
-                print("3.Remote Control","price: Rs.1500")
-                print("4.TV Stand","price: Rs.3000")
-                print("5.Extra HDMI Cable","price: Rs.800")
-                print("6.Surge Protector","price: Rs.1200")
-                print("7.Stabilizer","price: Rs.2500")
-                tv_accessories=input("Enter the accessories you want (Wall Mount, Soundbar, Remote Control, TV Stand, Extra HDMI Cable, Surge Protector, Stabilizer, Enter all if all accessories needed): ").lower()
-                if "all" in tv_accessories or "everything" in tv_accessories:
-                    print("Your selected accessories are added to cart")
-                    tv_cost += 2000 + 5000 + 1500 + 3000 + 800 + 1200 + 2500    
-                else:
-                    if "wall mount" in tv_accessories:
-                         print("Added wall mount to your cart.")
-                         tv_cost += 2000
-                         print("total TV cost after adding accessories is Rs.",tv_cost)
-                    if "soundbar" in tv_accessories:
-                        print("Added soundbar to your cart.")
-                        tv_cost += 5000
-                        print("total TV cost after adding accessories is Rs.",tv_cost)
-                    if "remote control" in tv_accessories:
-                        print("Added remote control to your cart.")
-                        tv_cost += 1500
-                        print("total TV cost after adding accessories is Rs.",tv_cost)
-                    if "tv stand" in tv_accessories:
-                        print("Added TV stand to your cart.")
-                        tv_cost += 3000
-                        print("total TV cost after adding accessories is Rs.",tv_cost)
-                    if "extra hdmi cable" in tv_accessories:
-                        print("Added extra HDMI cable to your cart.")
-                        tv_cost += 800
-                        print("total TV cost after adding accessories is Rs.",tv_cost)
-                    if "surge protector" in tv_accessories:
-                        print("Added surge protector to your cart.")
-                        tv_cost += 1200
-                        print("total TV cost after adding accessories is Rs.",tv_cost)
-                    if "stabilizer" in tv_accessories:
-                        print("Added stabilizer to your cart.")
-                        tv_cost += 2500
-                        print("total TV cost after adding accessories is Rs.",tv_cost)
-            elif tv_accesories_menu.lower()=='no':
-                print("Proceeding without showing accessories menu.")
-                tv_accessories=input("Enter the accessories you want (Wall Mount, Soundbar, Remote Control, TV Stand, Extra HDMI Cable, Surge Protector, Stabilizer, Enter all if all accessories needed): ").lower()
-                if "all" in tv_accessories or "everything" in tv_accessories:
-                    print("Your selected accessories are added to cart")
-                    tv_cost += 2000 + 5000 + 1500 + 3000 + 800 + 1200 + 2500    
-                else:
-                    if "wall mount" in tv_accessories:
-                         print("Added wall mount to your cart.")
-                         tv_cost += 2000
-                         print("total TV cost after adding accessories is Rs.",tv_cost)
-                    if "soundbar" in tv_accessories:
-                        print("Added soundbar to your cart.")
-                        tv_cost += 5000
-                        print("total TV cost after adding accessories is Rs.",tv_cost)
-                    if "remote control" in tv_accessories:
-                        print("Added remote control to your cart.")
-                        tv_cost += 1500
-                        print("total TV cost after adding accessories is Rs.",tv_cost)
-                    if "tv stand" in tv_accessories:
-                        print("Added TV stand to your cart.")
-                        tv_cost += 3000
-                        print("total TV cost after adding accessories is Rs.",tv_cost)
-                    if "extra hdmi cable" in tv_accessories:
-                        print("Added extra HDMI cable to your cart.")
-                        tv_cost += 800
-                        print("total TV cost after adding accessories is Rs.",tv_cost)
-                    if "surge protector" in tv_accessories:
-                        print("Added surge protector to your cart.")
-                        tv_cost += 1200
-                        print("total TV cost after adding accessories is Rs.",tv_cost)
-                    if "stabilizer" in tv_accessories:
-                        print("Added stabilizer to your cart.")
-                        tv_cost += 2500
-                        print("total TV cost after adding accessories is Rs.",tv_cost)
+            print("=============================================================")
+            print("Here are the available accessories for your TV:")
+            print("=============================================================")
+            print("accessories available:")
+            print("1.Wall Mount","price: Rs.2000")
+            print("2.Soundbar","price: Rs.5000")
+            print("3.Remote Control","price: Rs.1500")
+            print("4.TV Stand","price: Rs.3000")
+            print("5.Extra HDMI Cable","price: Rs.800")
+            print("6.Surge Protector","price: Rs.1200")
+            print("7.Stabilizer","price: Rs.2500")
+            tv_accessories=input("Enter the accessories you want (Wall Mount, Soundbar, Remote Control, TV Stand, Extra HDMI Cable, Surge Protector, Stabilizer, Enter all if all accessories needed): ").lower()
+            if "all" in tv_accessories or "everything" in tv_accessories:
+                print("Your selected accessories are added to cart")
+                tv_cost += 2000 + 5000 + 1500 + 3000 + 800 + 1200 + 2500    
+            else:
+                if "wall mount" in tv_accessories:
+                    print("Added wall mount to your cart.")
+                    tv_cost += 2000
+                    print("total TV cost after adding accessories is Rs.",tv_cost)
+                if "soundbar" in tv_accessories:
+                    print("Added soundbar to your cart.")
+                    tv_cost += 5000
+                    print("total TV cost after adding accessories is Rs.",tv_cost)
+                if "remote control" in tv_accessories:
+                    print("Added remote control to your cart.")
+                    tv_cost += 1500
+                    print("total TV cost after adding accessories is Rs.",tv_cost)
+                if "tv stand" in tv_accessories:
+                    print("Added TV stand to your cart.")
+                    tv_cost += 3000
+                    print("total TV cost after adding accessories is Rs.",tv_cost)
+                if "extra hdmi cable" in tv_accessories:
+                    print("Added extra HDMI cable to your cart.")
+                    tv_cost += 800
+                    print("total TV cost after adding accessories is Rs.",tv_cost)
+                if "surge protector" in tv_accessories:
+                    print("Added surge protector to your cart.")
+                    tv_cost += 1200
+                    print("total TV cost after adding accessories is Rs.",tv_cost)
+                if "stabilizer" in tv_accessories:
+                    print("Added stabilizer to your cart.")
+                    tv_cost += 2500
+                    print("total TV cost after adding accessories is Rs.",tv_cost)
         elif tv_accesories_request.lower()=='no':
             print("No accessories added to your cart.")
             tv_accessories='No accessories added'
@@ -791,53 +736,31 @@ while True:
         gaming_console_color=input("Enter the color you want (Black, White, Blue, Red): ")
         gaming_console_accessories_request=input("would you like to add accessories in your gaming console? (yes/no): ").lower()
         if gaming_console_accessories_request.lower()=='yes':
-            gaming_console_accessories_menu=input("would you like to see the accessories available? (yes/no): ").lower()
-            if gaming_console_accessories_menu.lower()=='yes':
-                print("=============================================================")
-                print("Here are the available accessories for your gaming console:")
-                print("=============================================================")
-                print("accessories available:")
-                print("1.Extra Controller","price: Rs.3000")
-                print("2.Charging Dock","price: Rs.2000")
-                print("3.Headset","price: Rs.2500")
-                gaming_console_accessories=input("Enter the accessories you want (Extra Controller, Charging Dock, Headset, Enter all if all accessories needed): ").lower()
-                if "all" in gaming_console_accessories or "everything" in gaming_console_accessories:
-                    print("Your selected accessories are added to cart")
-                    gaming_console_cost += 3000 + 2000 + 2500
+            print("=============================================================")
+            print("Here are the available accessories for your gaming console:")
+            print("=============================================================")
+            print("accessories available:")
+            print("1.Extra Controller","price: Rs.3000")
+            print("2.Charging Dock","price: Rs.2000")
+            print("3.Headset","price: Rs.2500")
+            gaming_console_accessories=input("Enter the accessories you want (Extra Controller, Charging Dock, Headset, Enter all if all accessories needed): ").lower()
+            if "all" in gaming_console_accessories or "everything" in gaming_console_accessories:
+                print("Your selected accessories are added to cart")
+                gaming_console_cost += 3000 + 2000 + 2500
+                print("total gaming console cost after adding accessories is Rs.",gaming_console_cost)
+            else:
+                if "extra controller" in gaming_console_accessories:
+                    print("Added extra controller to your cart.")
+                    gaming_console_cost += 3000
                     print("total gaming console cost after adding accessories is Rs.",gaming_console_cost)
-                else:
-                    if "extra controller" in gaming_console_accessories:
-                         print("Added extra controller to your cart.")
-                         gaming_console_cost += 3000
-                         print("total gaming console cost after adding accessories is Rs.",gaming_console_cost)
-                    if "charging dock" in gaming_console_accessories:
-                        print("Added charging dock to your cart.")
-                        gaming_console_cost += 2000
-                        print("total gaming console cost after adding accessories is Rs.",gaming_console_cost)
-                    if "headset" in gaming_console_accessories:
-                        print("Added headset to your cart.")
-                        gaming_console_cost += 2500
-                        print("total gaming console cost after adding accessories is Rs.",gaming_console_cost)
-            elif gaming_console_accessories_menu.lower()=='no':
-                print("Proceeding without showing accessories menu.")
-                gaming_console_accessories=input("Enter the accessories you want (Extra Controller, Charging Dock, Headset, Enter all if all accessories needed): ").lower()
-                if "all" in gaming_console_accessories or "everything" in gaming_console_accessories:
-                    print("Your selected accessories are added to cart")
-                    gaming_console_cost += 3000 + 2000 + 2500
+                if "charging dock" in gaming_console_accessories:
+                    print("Added charging dock to your cart.")
+                    gaming_console_cost += 2000
                     print("total gaming console cost after adding accessories is Rs.",gaming_console_cost)
-                else:
-                    if "extra controller" in gaming_console_accessories:
-                         print("Added extra controller to your cart.")
-                         gaming_console_cost += 3000
-                         print("total gaming console cost after adding accessories is Rs.",gaming_console_cost)
-                    if "charging dock" in gaming_console_accessories:
-                        print("Added charging dock to your cart.")
-                        gaming_console_cost += 2000
-                        print("total gaming console cost after adding accessories is Rs.",gaming_console_cost)
-                    if "headset" in gaming_console_accessories:
-                        print("Added headset to your cart.")
-                        gaming_console_cost += 2500
-                        print("total gaming console cost after adding accessories is Rs.",gaming_console_cost)
+                if "headset" in gaming_console_accessories:
+                    print("Added headset to your cart.")
+                    gaming_console_cost += 2500
+                    print("total gaming console cost after adding accessories is Rs.",gaming_console_cost)
         elif gaming_console_accessories_request.lower()=='no':
             print("No accessories added to your cart.")
             gaming_console_accessories='No accessories added'
