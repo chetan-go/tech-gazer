@@ -779,7 +779,7 @@ if order_conformation.lower() == 'yes':
 else:
     print_centered("================================")
     print_centered("Your orders were not confirmed.")
-    print_centered("Visit Again ❤️")
+    print_centered("Visit Aga")
     print_centered("================================")
 
 
