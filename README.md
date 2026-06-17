@@ -5,11 +5,6 @@ Products in the store:
 2.	 Laptops and accessories
 3.	Desktops and accessories
 4.	printers and scanners 
-5.	 wearable accessories
-6.	 Tv and accessories
-7.	music system and accessories
-9.smart home devices
-8.	gaming console and accessories
 input options available:
 -ask the user the type of product needed
 1. phones
@@ -75,174 +70,21 @@ Scenario 1: (If Yes — wants accessories)
 Scenario 2: (If No — doesn’t want accessories)
 
 •	Ask if he/she wants to exit or view other categories
-
-5. Wearable Accessories
-6. 
-•	Ask for the type of wearable (Smartwatch / Fitness band / VR headset / Smart glasses)
-•	Ask for preferred brand
-•	Ask for connectivity preference (Bluetooth / Wi-Fi / Cellular)
-•	Ask for battery backup requirement
-•	Ask for features (Heart rate monitor, GPS, SpO₂, sleep tracking, etc.)
-•	Ask for color or design preference
-•	Ask if they want accessories
-
-Scenario 1: (If Yes — wants accessories)
-
-•	Ask for extra straps or bands
-•	Ask for screen protector or case
-•	Ask for charging dock or cable
-•	Ask for compatible earbuds or wireless headset
-•	Ask for smartwatch cover or stand
-Scenario 2: (If No — doesn’t want accessories)
-
-•	Ask if he/she wants to exit or move to next product
-
-8. TV and Accessories
-•	Ask for the size of the TV (in inches)
-•	Ask for the display type (LED / OLED / QLED / 4K UHD / Smart)
-•	Ask for the brand preference
-•	Ask for resolution preference (HD / Full HD / 4K / 8K)
-•	Ask for smart features (Google TV / Android / Fire TV / Roku)
-•	Ask for sound output preference (standard / surround)
-•	Ask for connectivity options (HDMI / Wi-Fi / Bluetooth)
-•	Ask if they want accessories
-
-Scenario 1: (If Yes — wants accessories)
-
-•	Ask for wall mount or TV stand
-•	Ask for soundbar or home theater system
-•	Ask for HDMI cable or streaming stick
-•	Ask for TV remote or cover
-•	Ask for surge protector or stabilizer
-Scenario 2: (If No — doesn’t want accessories)
-
-•	Ask if he/she wants to exit or check other categories
-
-11. Music System and Accessories
-12. 
-•	Ask for the type of music system (Home Theater / Bluetooth Speaker / Soundbar / Hi-Fi system)
-•	Ask for brand preference
-•	Ask for audio output power (in watts)
-•	Ask for connectivity options (Bluetooth / AUX / USB / Wi-Fi)
-•	Ask for portability (Portable / Stationary)
-•	Ask for waterproof or outdoor use preference
-•	Ask if they want accessories
-
-Scenario 1: (If Yes — wants accessories)
-
-•	Ask for extra audio cables or AUX cords
-•	Ask for remote control or wall mounts
-•	Ask for subwoofer or amplifier
-•	Ask for speaker stands or covers
-•	Ask for microphone or karaoke kit
-Scenario 2: (If No — doesn’t want accessories)
-
-•	Ask if he/she wants to exit or browse more categories
-13. smart home devices
-Ask what category of smart home devices the user wants.
-
-Example options: Smart Lights, Smart Speakers, Smart Plugs, Smart Cameras, Smart Locks, Smart Thermostats.
-
-If user chooses Smart Lights
-
-Ask for light type (Color / White / Motion Sensor based).
-
-Ask for brightness level (e.g., low, medium, high).
-
-Ask for control type (Voice, App, Remote).
-
-Ask for brand preference (Philips, Syska, Wipro, etc.).
-
-Ask if they want to add smart light accessories (like switches, hubs).
-
-If user chooses Smart Speakers
-
-Ask which assistant they prefer (Alexa / Google Assistant / Siri).
-
-Ask if they want display or no display.
-
-Ask for sound quality preference (Basic, High Bass, Premium).
-
-Ask if they want to add compatible lights or plugs with it.
-
-If user chooses Smart Plugs
-
-Ask how many devices they want to connect.
-
-Ask if they want energy monitoring features.
-
-Ask if they need voice control support.
-
-Ask if they want indoor or outdoor use plugs.
-
-If user chooses Smart Cameras
-
-Ask if they want indoor or outdoor cameras.
-
-Ask if they want 360° rotation or fixed angle.
-
-Ask for recording quality (720p / 1080p / 2K).
-
-Ask if they need night vision.
-
-Ask if they want motion alerts on phone.
-
-If user chooses Smart Locks
-
-Ask for lock type (Fingerprint / Password / Key / App controlled).
-
-Ask how many doors they want to secure.
-
-Ask if they want backup physical keys.
-
-Ask for alert system (Notification / Alarm / Both).
-
-If user chooses Smart Thermostats
-
-Ask for number of rooms to control.
-
-Ask if they want auto temperature adjustment.
-
-Ask for integration preference (Google / Alexa / Apple).
-
-Ask for display type (Touch / Dial).
-
-Scenario 1: If user wants to continue shopping
-
-Ask if they want to add another category of device.
-
-Ask if they want to view all added items.
-
-Ask if they want recommendations for similar products.
-
-Scenario 2: If user does not want to continue
-
-Ask if they want to view their total bill.
-
-Ask if they want to confirm order or exit.
-
-If exit → show “Thank you for visiting Smart Home Store!”
-
-14. Gaming Console and Accessories
-15. 
-•	Ask for the console type (PlayStation / Xbox / Nintendo / PC)
-•	Ask for storage variant (e.g., 512GB / 1TB)
-•	Ask for preferred edition or model
-•	Ask for brand preference (Sony / Microsoft / Nintendo)
-•	Ask for display compatibility (1080p / 4K / 8K)
-•	Ask for game genre preference (Action / Sports / Racing / Adventure)
-•	Ask if they want accessories
-
-Scenario 1: (If Yes — wants accessories)
-
-•	Ask for extra controllers or joysticks
-•	Ask for gaming headset or earphones
-•	Ask for external hard drive or SSD
-•	Ask for cooling pad or stand
-•	Ask for physical game CDs or digital subscriptions (e.g., PS Plus, Game Pass)
-Scenario 2: (If No — doesn’t want accessories)
-
-•	Ask if he/she wants to exit or continue shopping
+Order placement:
+1. program will ask if the user wants to review its cart or not
+2. if yes :
+	1. it will ask if the user wants to review the items before the placing order
+	2. it will ask for delivery address
+	3. after that it will show the final cost of the bill and will ask if the user wants to place the order
+	4. if yes :
+		1. it will ask for payment mode and after that will proceed for payment
+		2. it will show payment successful and will display order placed
+Bill part:
+1. it will ask if the user wants to see the bill or not
+if yes:
+	it will display
+no:
+	it will exit with greetings
 
 
 
